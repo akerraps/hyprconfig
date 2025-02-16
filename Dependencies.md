@@ -14,6 +14,11 @@ To install rofi:
 sudo pacman -S rofi
 ```
 
+## Antimicrox
+```bash
+sudo pacman -S antimicrox
+```
+
 ## Status bar
 To install waybar:
 ```bash
