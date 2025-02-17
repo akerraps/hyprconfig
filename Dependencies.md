@@ -65,3 +65,10 @@ To reload waybar config:
 ```bash
 bash ~/.config/waybar/reload_waybar.sh
 ```
+
+## Bluetooth config
+
+Install blueman gui:
+```bash
+sudo pacman -S blueman
+```
