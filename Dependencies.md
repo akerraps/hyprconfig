@@ -72,3 +72,6 @@ Install blueman gui:
 ```bash
 sudo pacman -S blueman
 ```
+
+## Whatsapp web
+Whatsapp web PWA must be installed for it to autostart
