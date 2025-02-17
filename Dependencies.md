@@ -5,7 +5,7 @@ pacman -S uwsm
 ```
 ## Install font awesome
 ```bash
-sudo pacman -S ttf-font-awesome
+sudo pacman -S nerd-fonts
 ```
 
 ## App launcher

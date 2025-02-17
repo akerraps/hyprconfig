@@ -31,7 +31,7 @@
       "2": "",
       "3": "",
       "4": "",
-      "5": "",
+      "5": "󰊴",
       "urgent": "",
       "focused": "",
       "default": "",
@@ -106,7 +106,7 @@
   },
   "clock": {
     "format": "{:%H:%M}  ",
-    "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+    "format-alt": "{:%A, %B %d, %Y (%R)}   ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
