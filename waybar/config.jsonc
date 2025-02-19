@@ -28,13 +28,11 @@
     "format": "{name}: {icon}",
     "format-icons": {
       "1": "",
-      "2": "",
-      "3": "",
       "4": "",
       "5": "󰊴",
       "urgent": "",
       "focused": "",
-      "default": "",
+      "default": "",
     },
   },
   "keyboard-state": {
@@ -102,7 +100,7 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager",
+    "on-click": "hyprctl dispatch exec '[float] blueman-manager'",
   },
   "clock": {
     "format": "{:%H:%M}  ",
@@ -157,13 +155,18 @@
     },
   },
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format": "{ifname}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰌘",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 30,
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click": "hyprctl dispatch exec '[float] kitty nmtui'",
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -182,7 +185,7 @@
       "car": "",
       "default": ["", "", ""],
     },
-    "on-click": "pavucontrol",
+    "on-click": "hyprctl dispatch exec '[float] pavucontrol'",
   },
   "custom/media": {
     "format": "{icon} {}",
