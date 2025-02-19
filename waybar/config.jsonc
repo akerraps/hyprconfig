@@ -100,7 +100,7 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "hyprctl dispatch exec '[float] blueman-manager'",
+    "on-click": "hyprctl dispatch exec '[float;size 800 600] blueman-manager'",
   },
   "clock": {
     "format": "{:%H:%M}  ",
@@ -166,7 +166,7 @@
     "tooltip-format-disconnected": "󰌙 Disconnected",
     "max-length": 30,
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "on-click": "hyprctl dispatch exec '[float] kitty nmtui'",
+    "on-click": "hyprctl dispatch exec '[float;size 800 600] kitty nmtui'",
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -185,7 +185,7 @@
       "car": "",
       "default": ["", "", ""],
     },
-    "on-click": "hyprctl dispatch exec '[float] pavucontrol'",
+    "on-click": "hyprctl dispatch exec '[float;size 800 600] pavucontrol'",
   },
   "custom/media": {
     "format": "{icon} {}",
@@ -203,7 +203,7 @@
     "format": "⏻ ",
     "tooltip": false,
     "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+    "menu-file": "$HOME/.config/waybar/power_mssnu.sh", // Menu file in resources folder
     "menu-actions": {
       "shutdown": "shutdown",
       "reboot": "reboot",
