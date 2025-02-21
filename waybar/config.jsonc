@@ -27,7 +27,8 @@
     "warp-on-scroll": false,
     "format": "{name}: {icon}",
     "format-icons": {
-      "1": "",
+      "1": "",
+      "3": "",
       "4": "",
       "5": "󰊴",
       "urgent": "",
@@ -203,7 +204,7 @@
     "format": "⏻ ",
     "tooltip": false,
     "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_mssnu.sh", // Menu file in resources folder
+    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
     "menu-actions": {
       "shutdown": "shutdown",
       "reboot": "reboot",
