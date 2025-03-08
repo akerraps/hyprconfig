@@ -85,3 +85,15 @@ sudo pacman -S swaync
 ```bash
 yay -S hyprshot
 ```
+
+## Hyprland’s xdg-desktop-portal implementation
+It allows for screensharing, global shortcuts, etc.
+```bash
+sudo pacman -S xdg-desktop-portal-hyprland
+```
+
+## Authentication daemon
+It is required for GUI applications to be able to request elevated privileges.
+```bash
+sudo pacman -S hyprpolkitagent
+```
