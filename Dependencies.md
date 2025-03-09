@@ -102,3 +102,8 @@ sudo pacman -S hyprpolkitagent
 ```bash
 sudo pacman -S qt5-wayland qt6-wayland
 ```
+
+## Image viewer
+```bash
+sudo pacman -S imv
+```
