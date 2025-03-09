@@ -97,3 +97,8 @@ It is required for GUI applications to be able to request elevated privileges.
 ```bash
 sudo pacman -S hyprpolkitagent
 ```
+
+## Qt Wayland Support
+```bash
+sudo pacman -S qt5-wayland qt6-wayland
+```
