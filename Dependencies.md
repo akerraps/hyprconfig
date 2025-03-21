@@ -107,3 +107,9 @@ sudo pacman -S qt5-wayland qt6-wayland
 ```bash
 sudo pacman -S imv
 ```
+
+## Add kitty config
+```bash
+cd ~/.config
+ln -s hypr/kitty/ .
+```
