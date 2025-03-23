@@ -113,3 +113,8 @@ sudo pacman -S imv
 cd ~/.config
 ln -s hypr/kitty/ .
 ```
+
+## Add music player daemon
+```bash
+sudo pacman -S mpd
+```
