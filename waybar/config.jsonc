@@ -20,18 +20,10 @@
 
   //Modules configuration
   "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false,
-    "format": "{name}: {icon}",
+    "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "3": "",
-      "8": "",
-      "9": "󰊴",
-      "urgent": "",
-      "focused": "",
-      "default": "",
+      "default": "",
+      "active": "",
     },
   },
   "keyboard-state": {
