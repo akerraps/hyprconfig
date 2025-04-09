@@ -5,14 +5,11 @@
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": ["clock"],
-  "modules-center": [
-    "hyprland/workspaces",
-    "custom/smallspacer",
-    "custom/notification",
-  ],
+  "modules-center": ["hyprland/workspaces", "custom/notification"],
   "modules-right": [
     "tray",
     "pulseaudio",
+    "pulseaudio/slider",
     "network",
     "cpu",
     "memory",
@@ -219,5 +216,13 @@
   },
   "custom/smallspacer": {
     "format": " ",
+    "tooltip": false,
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "rotate": 0,
+    "device": "pulseaudio",
+    "scroll-step": 1,
   },
 }
