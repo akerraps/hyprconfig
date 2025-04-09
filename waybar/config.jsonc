@@ -2,20 +2,21 @@
 {
   "layer": "bottom", // Waybar at top layer
   // "position": "bottom", // Waybar position (top|bottom|left|right)
-  "height": 30, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock", "temperature"],
-  "modules-right": [
+  "modules-left": ["clock"],
+  "modules-center": [
+    "hyprland/workspaces",
+    "custom/smallspacer",
     "custom/notification",
+  ],
+  "modules-right": [
     "tray",
-    "mpd",
     "pulseaudio",
     "network",
     "cpu",
     "memory",
+    "temperature",
     "bluetooth",
     "custom/power",
   ],
@@ -134,7 +135,10 @@
     "tooltip": false,
   },
   "memory": {
-    "format": "{}% ",
+    "format": "{}% {icon}",
+    "interval": 1,
+    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+    "max-length": 10,
   },
   "temperature": {
     // "thermal-zone": 2,
@@ -142,7 +146,7 @@
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""],
+    "format-icons": ["", "", ""],
   },
   "network": {
     "format": "{ifname}",
@@ -160,20 +164,12 @@
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-bluetooth-muted": "{icon}  {volume}%",
+    "format-muted": "{icon}  {volume}%",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""],
+      "default": ["", " ", "  "],
     },
     "on-click": "hyprctl dispatch exec '[float;size 800 600] pavucontrol'",
   },
@@ -205,20 +201,23 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": "",
+      "notification": "󰅸",
+      "none": "󰂜",
+      "dnd-notification": "󰅸",
+      "dnd-none": "󱏨",
+      "inhibited-notification": "󰅸",
+      "inhibited-none": "󰂜",
+      "dnd-inhibited-notification": "󰅸",
+      "dnd-inhibited-none": "󱏨",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
+    "on-click": "swaync-client -t -sw",
     "escape": true,
+  },
+  "custom/smallspacer": {
+    "format": " ",
   },
 }
