@@ -1,13 +1,10 @@
 // -*- mode: jsonc -*-
 {
-  "layer": "bottom", // Waybar at top layer
-  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  "layer": "top",
   "spacing": 4, // Gaps between modules (4px)
-  // Choose the order of the modules
-  "modules-left": ["clock"],
+  "modules-left": ["clock", "tray"],
   "modules-center": ["hyprland/workspaces", "custom/notification"],
   "modules-right": [
-    "tray",
     "pulseaudio",
     "pulseaudio/slider",
     "network",
@@ -95,7 +92,7 @@
     "on-click": "hyprctl dispatch exec '[float;size 800 600] blueman-manager'",
   },
   "clock": {
-    "format": "{:%H:%M}  ",
+    "format": "{:%b %d %H:%M}",
     "format-alt": "{:%A, %B %d, %Y (%R)}   ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -181,10 +178,9 @@
     "menu": "on-click",
     "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
     "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate",
+      "shutdown": "systemctl poweroff",
+      "reboot": "systemctl reboot",
+      "logout": "hyprctl dispatch exit",
     },
   },
   "custom/notification": {

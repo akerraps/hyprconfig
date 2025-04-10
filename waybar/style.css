@@ -125,7 +125,7 @@ window#waybar {
 }
 
 #tray {
-    margin-left: 10px; /* Agrega 5px de separación hacia la izquierda */
+    margin-right: 15px;
 }
 
 #tray menu * {
