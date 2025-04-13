@@ -1,53 +1,37 @@
+@import "frappe.css";
+
 * {
-    border: none;
-    font-family:
-        Font Awesome,
-        Roboto,
-        Arial,
-        sans-serif;
-    font-size: 13px;
-    color: #ffffff;
-    border-radius: 20px;
+    font-family: FantasqueSansMono Nerd Font;
+    font-size: 15px;
+    min-height: 0;
+    border-radius: 1rem;
 }
 
-window {
-    /*font-weight: bold;*/
+#waybar {
+    background: transparent;
+    color: @text;
+    margin: 5px 5px;
+    border-radius: 1rem;
 }
-window#waybar {
-    background: rgba(0, 0, 0, 0);
-}
-/*-----module groups----*/
-.modules-right {
-    background-color: rgba(0, 43, 51, 0.85);
-    margin: 2px 10px 0 0;
-}
-.modules-center {
-    background-color: rgba(0, 43, 51, 0.85);
-    margin: 2px 0 0 0;
-}
-.modules-left {
-    margin: 2px 0 0 5px;
-    background-color: rgba(0, 119, 179, 0.6);
-}
+
 /*-----modules indv----*/
+#workspaces {
+    border-radius: 1rem;
+    margin: 5px;
+    background-color: @surface0;
+    margin-left: 1rem;
+}
 #workspaces button {
+    color: @lavender;
     padding: 1px 5px;
-    background-color: transparent;
 }
 #workspaces button:hover {
-    box-shadow: inherit;
-    background-color: rgba(0, 153, 153, 1);
+    color: @sapphire;
+    border-radius: 1rem;
 }
-
-#workspaces button.focused {
-    background-color: rgba(0, 43, 51, 0.85);
-}
-
-#workspaces button:hover {
-    background: none;
-    color: #72d792;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+#workspaces button.active {
+    color: @sky;
+    border-radius: 1rem;
 }
 
 #clock,
@@ -59,25 +43,17 @@ window#waybar {
 #pulseaudio,
 #custom-media,
 #mode,
-#custom-power,
 #custom-menu,
-#idle_inhibitor {
-    padding: 0 10px;
-}
-#mode {
-    color: #cc3436;
-    font-weight: bold;
-}
+#tray,
+#custom-notification,
+#bluetooth,
 #custom-power {
-    background-color: rgba(0, 119, 179, 0.6);
-    border-radius: 100px;
-    margin: 5px 5px;
-    padding: 1px 1px 1px 6px;
+    background-color: @surface0;
+    padding: 0.5rem 1rem;
+    margin: 5px 0;
 }
+
 /*-----Indicators----*/
-#idle_inhibitor.activated {
-    color: #2dcc36;
-}
 #pulseaudio.muted {
     color: #cc3436;
 }
@@ -116,25 +92,4 @@ window#waybar {
 #pulseaudio-slider highlight {
     border-radius: 8px;
     background-color: #2096c0;
-}
-#custom-notification {
-    font-family: "JetBrains Mono Nerd Font";
-    font-size: 17px;
-    color: #a1bdce;
-    margin: 2px 15px 0px 5px;
-}
-
-#tray {
-    margin-right: 15px;
-}
-
-#tray menu * {
-    min-height: 16px;
-    font-weight: bold;
-    font-size: 13px;
-    color: #9488e3;
-}
-
-#tray menu separator {
-    min-height: 10px;
 }
