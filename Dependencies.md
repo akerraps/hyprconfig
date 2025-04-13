@@ -118,3 +118,10 @@ ln -s hypr/kitty/ .
 ```bash
 sudo pacman -S mpd
 ```
+
+## Enable swaync config
+Flavour chosen: Frappé (https://github.com/catppuccin/swaync/releases/download/v0.2.3/frappe.css)
+```bash
+ln -s ~/.config/hypr/swaync ~/.config/
+swaync-client -rs
+```
