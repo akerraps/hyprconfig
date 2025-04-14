@@ -18,10 +18,12 @@
   //Modules configuration
   "hyprland/workspaces": {
     "format": "{icon}",
+    "show-special": true,
     "format-icons": {
       "default": "",
       "active": "",
       "urgent": "",
+      "special": "",
     },
   },
   "keyboard-state": {

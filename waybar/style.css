@@ -33,6 +33,13 @@
     color: @sky;
     border-radius: 1rem;
 }
+#workspaces button.special.active {
+    color: @lavender;
+}
+#workspaces button.special:hover {
+    color: @sapphire;
+    border-radius: 1rem;
+}
 
 #clock,
 #battery,
