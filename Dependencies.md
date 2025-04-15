@@ -77,8 +77,12 @@ sudo pacman -S blueman
 Whatsapp web PWA must be installed for it to autostart
 
 ## Notification daemon
+Flavour chosen: Frappé (https://github.com/catppuccin/swaync/releases/download/v0.2.3/frappe.css)
+
 ```bash
 sudo pacman -S swaync
+ln -s ~/.config/hypr/swaync ~/.config/
+swaync-client -rs
 ```
 
 ## Screenshot service
@@ -117,11 +121,4 @@ ln -s hypr/kitty/ .
 ## Add music player daemon
 ```bash
 sudo pacman -S mpd
-```
-
-## Enable swaync config
-Flavour chosen: Frappé (https://github.com/catppuccin/swaync/releases/download/v0.2.3/frappe.css)
-```bash
-ln -s ~/.config/hypr/swaync ~/.config/
-swaync-client -rs
 ```
