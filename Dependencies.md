@@ -93,3 +93,8 @@ ln -s hypr/kitty/ .
 ```bash
 sudo pacman -S mpd
 ```
+
+## Install catppuccin themes
+```bash
+sudo pacman -S catppuccin-gtk-theme
+```
