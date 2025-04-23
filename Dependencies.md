@@ -22,7 +22,7 @@ sudo pacman -S antimicrox
 
 Make it exec on start; This way will work on other DE too:
 ```bash
-cat <<EOF > ~/autostart/io.github.antimicrox.antimicrox.desktop
+cat <<EOF > ~/.config/autostart/io.github.antimicrox.antimicrox.desktop
 [Desktop Entry]
 Name=AntiMicroX
 Comment=Use a gamepad to control a variety of programs
