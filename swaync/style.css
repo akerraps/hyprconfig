@@ -342,6 +342,7 @@ slider {
 .control-center-dnd {
     margin-top: 5px;
     border-radius: 8px;
+    margin-bottom: 7px;
     background: #414559;
     border: 1px solid #51576d;
     box-shadow: none;
@@ -382,6 +383,8 @@ slider {
 .widget-mpris .widget-mpris-player {
     background: #414559;
     padding: 7px;
+    margin-top: 7px;
+    border-radius: 12px;
 }
 
 .widget-mpris .widget-mpris-title {
