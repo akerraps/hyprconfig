@@ -98,3 +98,13 @@ sudo pacman -S mpd
 ```bash
 sudo pacman -S catppuccin-gtk-theme
 ```
+
+## Enable rofi configuration
+```bash
+ln -s ~/.config/hypr/rofi/ ~/.config/
+```
+
+## Add hyprpanel
+```bash
+yay -S ags-hyprpanel-git
+```
