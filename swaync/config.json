@@ -30,17 +30,6 @@
   "hide-on-action": true,
   "text-empty": "No Notifications",
   "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
-    "example-action-script": {
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
-    }
-  },
   "notification-visibility": {
     "example-name": {
       "state": "muted",
@@ -48,7 +37,7 @@
       "app-name": "Spotify"
     }
   },
-  "widgets": ["inhibitors", "title", "dnd", "notifications"],
+  "widgets": ["inhibitors", "title", "dnd", "mpris", "notifications"],
   "widget-config": {
     "inhibitors": {
       "text": "Inhibitors",
@@ -70,7 +59,7 @@
     "mpris": {
       "image-size": 96,
       "image-radius": 12,
-      "blacklist": []
+      "blacklist": ["brave"]
     },
     "buttons-grid": {
       "actions": [
