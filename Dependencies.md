@@ -105,6 +105,8 @@ ln -s ~/.config/hypr/rofi/ ~/.config/
 ```
 
 ## Add hyprpanel
+Note that is recommended to link the hyprpanel config before installign it
 ```bash
+ln -s ~/.config/hypr/hyprpanel/ ~/.config/
 yay -S ags-hyprpanel-git
 ```
