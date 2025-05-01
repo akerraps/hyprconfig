@@ -89,11 +89,6 @@ cd ~/.config
 ln -s hypr/kitty/ .
 ```
 
-## Add music player daemon
-```bash
-sudo pacman -S mpd
-```
-
 ## Install catppuccin themes
 ```bash
 sudo pacman -S catppuccin-gtk-theme
