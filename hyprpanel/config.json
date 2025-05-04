@@ -406,27 +406,20 @@
   "bar.volume.label": true,
   "bar.network.showWifiInfo": true,
   "bar.network.truncation": true,
-  "bar.bluetooth.label": true,
+  "bar.bluetooth.label": false,
   "bar.media.show_active_only": true,
   "bar.notifications.show_total": false,
   "bar.layouts": {
     "*": {
-      "left": [
-        "dashboard",
-        "clock",
-        "ram",
-        "cpu",
-        "systray"
-      ],
-      "middle": [
-        "workspaces",
-        "notifications"
-      ],
+      "left": ["clock", "separator", "ram", "cpu", "separator", "systray"],
+      "middle": ["workspaces"],
       "right": [
         "volume",
         "network",
         "bluetooth",
-        "power"
+        "notifications",
+        "separator",
+        "dashboard"
       ]
     }
   },
@@ -444,5 +437,6 @@
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "wallpaper.enable": true,
   "wallpaper.pywal": false,
-  "wallpaper.image": ""
+  "wallpaper.image": "~/.config/hypr/images/wallpaper.jpg",
+  "theme.bar.buttons.separator.color": "#585b7000"
 }
