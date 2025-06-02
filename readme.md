@@ -6,7 +6,7 @@ It's still a **work in progress**, so some components are unfinished or unconfig
 ### Current Setup:
 - **Hyprpanel** with a modified **Nord** theme
 - Terminal: **Kitty**
-- Launcher: **Rofi** *(not configured yet)*
+- Launcher: **Rofi**
 
 ![First rice image](resources/My_first_rice.png)
 
