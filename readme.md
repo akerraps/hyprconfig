@@ -66,6 +66,5 @@ ln -s ~/.config/hypr/hyprpanel/ ~/.config/hyprpanel  # Hyprpanel (should be link
 
 ## ✅ Requirements
 - Arch Linux or Arch-based distro
-- yay installed
-- hyprland config files under ~/.config/hypr/
-- xpected directories: kitty/, rofi/, hyprpanel/
+- `yay` installed
+- Hyprland config files under ~/.config/hypr/
