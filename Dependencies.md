@@ -20,41 +20,8 @@ Install app:
 sudo pacman -S antimicrox
 ```
 
-## Status bar
-To install waybar:
-```bash
-sudo pacman -S waybar
-```
-
-### Enable waybar config
-To ensure Waybar uses your customized configuration, create a symbolic link (symlink) from the folder .config/hypr/waybar to .config/waybar.
-This will allow Waybar to automatically load your configuration when it starts.
-```bash
-ln -s ~/.config/hypr/waybar ~/.config/waybar
-```
-To reload waybar config:
-```bash
-bash ~/.config/waybar/reload_waybar.sh
-```
-
-## Bluetooth config
-
-Install blueman gui:
-```bash
-sudo pacman -S blueman
-```
-
 ## Whatsapp web
 Whatsapp web PWA must be installed for it to autostart
-
-## Notification daemon
-Flavour chosen: Frappé (https://github.com/catppuccin/swaync/releases/download/v0.2.3/frappe.css)
-
-```bash
-sudo pacman -S swaync
-ln -s ~/.config/hypr/swaync ~/.config/
-swaync-client -rs
-```
 
 ## Screenshot service
 ```bash
