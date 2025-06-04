@@ -374,7 +374,7 @@
   "theme.bar.buttons.modules.worldclock.icon_background": "#8fbcbb",
   "theme.bar.buttons.modules.worldclock.border": "#8fbcbb",
   "menus.transition": "crossfade",
-  "menus.power.showLabel": true,
+  "menus.power.showLabel": false,
   "theme.bar.buttons.modules.ram.enableBorder": false,
   "theme.bar.transparent": true,
   "theme.bar.buttons.modules.microphone.enableBorder": false,
@@ -395,7 +395,7 @@
   "bar.launcher.autoDetectIcon": false,
   "theme.bar.buttons.dashboard.enableBorder": false,
   "theme.bar.buttons.workspaces.enableBorder": false,
-  "bar.workspaces.show_icons": true,
+  "bar.workspaces.show_icons": false,
   "bar.workspaces.show_numbered": false,
   "bar.workspaces.workspaceMask": false,
   "bar.workspaces.showWsIcons": false,
@@ -411,8 +411,17 @@
   "bar.notifications.show_total": false,
   "bar.layouts": {
     "*": {
-      "left": ["clock", "separator", "ram", "cpu", "separator", "systray"],
-      "middle": ["workspaces"],
+      "left": [
+        "clock",
+        "separator",
+        "ram",
+        "cpu",
+        "separator",
+        "systray"
+      ],
+      "middle": [
+        "workspaces"
+      ],
       "right": [
         "volume",
         "network",
@@ -438,5 +447,13 @@
   "wallpaper.enable": true,
   "wallpaper.pywal": false,
   "wallpaper.image": "~/.config/hypr/images/wallpaper.jpg",
-  "theme.bar.buttons.separator.color": "#585b7000"
+  "theme.bar.buttons.separator.color": "#585b7000",
+  "bar.customModules.worldclock.showIcon": false,
+  "bar.customModules.worldclock.tz": [
+    "Europe/Madrid"
+  ],
+  "bar.customModules.worldclock.format": "%I:%M:%S %p %Z",
+  "menus.clock.time.hideSeconds": false,
+  "menus.dashboard.powermenu.avatar.name": "Akerraps",
+  "menus.dashboard.stats.enable_gpu": true
 }
