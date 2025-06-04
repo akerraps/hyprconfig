@@ -18,6 +18,9 @@ It’s designed for Arch Linux (or Arch-based distros), and assumes you already 
 ## 🚀 Quick Setup (Copy & Paste)
 
 ```bash
+# --- Link your configuration files ---
+mkdir -p ~/.config
+
 ln -s ~/.config/hypr/hyprpanel/ ~/.config/hyprpanel # Hyprpanel
 ln -s ~/.config/hypr/kitty/ ~/.config/kitty         # Kitty terminal config
 ln -s ~/.config/hypr/rofi/ ~/.config/rofi           # Rofi launcher config
@@ -39,9 +42,6 @@ sudo pacman -S \
 yay -S \
   hyprshot \                            # Screenshot tool for Wayland
   ags-hyprpanel-git                     # Customizable Hyprland panel
-
-# --- Link your configuration files ---
-mkdir -p ~/.config
 
 # --- Optional: Install WhatsApp Web as a PWA ---
 # Open WhatsApp Web in Chromium/Firefox and install it as an app (PWA).
