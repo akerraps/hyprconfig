@@ -13,7 +13,7 @@
   "theme.bar.buttons.media.background": "#3b4252",
   "theme.bar.menus.menu.volume.text": "#d8dee9",
   "theme.bar.menus.menu.volume.card.color": "#3b4252",
-  "theme.bar.menus.menu.volume.label.color": "#81a1c1",
+  "theme.bar.menus.menu.volume.label.color": "#8fbcbb",
   "theme.bar.menus.popover.text": "#88c0d0",
   "theme.bar.menus.popover.background": "#2e3440",
   "theme.bar.menus.menu.dashboard.powermenu.shutdown": "#8fbcbb",
@@ -155,7 +155,7 @@
   "theme.bar.menus.menu.volume.icons.passive": "#5e81ac",
   "theme.bar.menus.menu.volume.iconbutton.active": "#81a1c1",
   "theme.bar.menus.menu.volume.iconbutton.passive": "#d8dee9",
-  "theme.bar.menus.menu.volume.listitems.active": "#81a1c1",
+  "theme.bar.menus.menu.volume.listitems.active": "#8fbcbb",
   "theme.bar.menus.menu.volume.listitems.passive": "#d8dee9",
   "theme.bar.menus.menu.volume.border.color": "#434c53",
   "theme.bar.menus.menu.volume.background.color": "#2e3440",
@@ -455,5 +455,12 @@
   "bar.customModules.worldclock.format": "%I:%M:%S %p %Z",
   "menus.clock.time.hideSeconds": false,
   "menus.dashboard.powermenu.avatar.name": "Akerraps",
-  "menus.dashboard.stats.enable_gpu": true
+  "menus.dashboard.stats.enable_gpu": true,
+  "menus.dashboard.shortcuts.right.shortcut3.command": "hyprshot -m region",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Brave",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "brave",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "",
+  "menus.dashboard.directories.left.directory3.command": "bash -c \"xdg-open $HOME/.config/hypr\"",
+  "menus.dashboard.shortcuts.right.shortcut1.icon": "",
+  "menus.dashboard.shortcuts.right.shortcut1.tooltip": "Color Picker"
 }
