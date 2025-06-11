@@ -24,6 +24,7 @@ mkdir -p ~/.config
 ln -s ~/.config/hypr/hyprpanel/ ~/.config/hyprpanel # Hyprpanel
 ln -s ~/.config/hypr/kitty/ ~/.config/kitty         # Kitty terminal config
 ln -s ~/.config/hypr/rofi/ ~/.config/rofi           # Rofi launcher config
+ln -s ~/.config/hypr/zsh/.zshrc ~                   # zsh config
 
 # --- Core packages and tools ---
 sudo pacman -S \
@@ -36,7 +37,8 @@ sudo pacman -S \
   qt5-wayland qt6-wayland \             # Qt apps support in Wayland
   imv \                                 # Lightweight image viewer
   catppuccin-gtk-theme \                # Nice-looking GTK theme
-  swww                                  # Wallpaper daemon used by hyprpanel
+  swww \                                # Wallpaper daemon used by hyprpanel
+  curl
 
 # --- AUR packages (via yay) ---
 yay -S \
@@ -46,6 +48,8 @@ yay -S \
 # --- Optional: Install WhatsApp Web as a PWA ---
 # Open WhatsApp Web in Chromium/Firefox and install it as an app (PWA).
 # This enables it to autostart with the session.
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## 📦 What’s Included
