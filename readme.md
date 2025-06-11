@@ -25,6 +25,8 @@ ln -s ~/.config/hypr/hyprpanel/ ~/.config/hyprpanel # Hyprpanel
 ln -s ~/.config/hypr/kitty/ ~/.config/kitty         # Kitty terminal config
 ln -s ~/.config/hypr/rofi/ ~/.config/rofi           # Rofi launcher config
 ln -s ~/.config/hypr/zsh/.zshrc ~                   # zsh config
+ln -s ~/.config/hypr/vim/.vimrc ~                   # vim config
+ln -s ~/.config/hypr/vim ~/.vim                     # vim config
 
 # --- Core packages and tools ---
 sudo pacman -S \
