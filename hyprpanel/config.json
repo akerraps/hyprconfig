@@ -411,17 +411,8 @@
   "bar.notifications.show_total": false,
   "bar.layouts": {
     "*": {
-      "left": [
-        "clock",
-        "separator",
-        "ram",
-        "cpu",
-        "separator",
-        "systray"
-      ],
-      "middle": [
-        "workspaces"
-      ],
+      "left": ["clock", "separator", "ram", "cpu", "separator", "systray"],
+      "middle": ["workspaces"],
       "right": [
         "volume",
         "network",
@@ -449,9 +440,7 @@
   "wallpaper.image": "~/.config/hypr/images/wallpaper.jpg",
   "theme.bar.buttons.separator.color": "#585b7000",
   "bar.customModules.worldclock.showIcon": false,
-  "bar.customModules.worldclock.tz": [
-    "Europe/Madrid"
-  ],
+  "bar.customModules.worldclock.tz": ["Europe/Madrid"],
   "bar.customModules.worldclock.format": "%I:%M:%S %p %Z",
   "menus.clock.time.hideSeconds": false,
   "menus.dashboard.powermenu.avatar.name": "Akerraps",
@@ -462,5 +451,7 @@
   "menus.dashboard.shortcuts.left.shortcut1.icon": "",
   "menus.dashboard.directories.left.directory3.command": "bash -c \"xdg-open $HOME/.config/hypr\"",
   "menus.dashboard.shortcuts.right.shortcut1.icon": "",
-  "menus.dashboard.shortcuts.right.shortcut1.tooltip": "Color Picker"
+  "menus.dashboard.shortcuts.right.shortcut1.tooltip": "Color Picker",
+  "menus.media.displayTime": false,
+  "theme.bar.buttons.media.enableBorder": false
 }
