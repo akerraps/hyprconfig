@@ -7,7 +7,9 @@ This setup is still **a work in progress**, so some parts are unfinished or not 
 
 ## 🎨 Screenshot
 
-![My first rice](resources/My_first_rice.png)
+![My first rice 2](resources/My_first_rice_4.png)
+
+![My first rice 4](resources/My_first_rice_2.png)
 
 ---
 
