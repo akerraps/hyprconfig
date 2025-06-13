@@ -5,8 +5,7 @@
 set nocompatible          " Disable compatibility with old vi
 set encoding=utf-8        " Use UTF-8 encoding
 set number                " Show absolute line numbers
-set relativenumber        " Show relative line numbers (useful for navigation)
-set mouse=a               " Enable mouse support in all modes
+"set relativenumber        " Show relative line numbers (useful for navigation)
 set clipboard=unnamedplus " Use system clipboard for yank/paste
 
 " ------------------------------
@@ -33,9 +32,9 @@ set hlsearch              " Highlight all matches of the search
 " ------------------------------
 
 syntax on                 " Enable syntax highlighting
-set termguicolors         " Enable 24-bit RGB colors in terminal
-set background=dark       " Set background theme to dark
-colorscheme zenburn
+"set termguicolors         " Enable 24-bit RGB colors in terminal
+"set background=dark       " Set background theme to dark
+"colorscheme zenburn
 
 " ------------------------------
 " USABILITY
@@ -59,8 +58,16 @@ let mapleader=" "
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>a
 
-" Toggle NERDTree with F2
-nnoremap <F2> :NERDTreeToggle<CR>
+" Exit with Ctrl+x
+nnoremap <C-x> :x<CR>
+inoremap <C-x> <Esc>:x<CR>
+
+" Quit without saving with Ctrl+q
+nnoremap <C-q> :q!<CR>
+inoremap <C-q> <Esc>:q!<CR>
+
+" Set relative numbers with Space → r → n
+nnoremap <leader>rn :set relativenumber!<CR>
 
 " Clear search highlights with Enter
 nnoremap <CR> :nohlsearch<CR>
@@ -70,4 +77,3 @@ nnoremap <CR> :nohlsearch<CR>
 " ------------------------------
 
 filetype plugin indent on   " Enable filetype-specific plugins and indentation
-
