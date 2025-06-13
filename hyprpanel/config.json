@@ -446,7 +446,7 @@
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "wallpaper.enable": true,
   "wallpaper.pywal": false,
-  "wallpaper.image": "~/.config/hypr/images/wallpaper.jpg",
+  "wallpaper.image": "/home/akerraps/.config/hypr/images/wallpaper.jpg",
   "theme.bar.buttons.separator.color": "#585b7000",
   "bar.customModules.worldclock.showIcon": false,
   "bar.customModules.worldclock.tz": [
@@ -465,5 +465,8 @@
   "menus.dashboard.shortcuts.right.shortcut1.tooltip": "Color Picker",
   "menus.media.displayTime": false,
   "theme.bar.buttons.media.enableBorder": false,
-  "bar.workspaces.monitorSpecific": true
+  "bar.workspaces.monitorSpecific": true,
+  "theme.matugen": true,
+  "theme.matugen_settings.mode": "dark",
+  "theme.matugen_settings.scheme_type": "tonal-spot"
 }

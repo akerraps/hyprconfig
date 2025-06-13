@@ -1,75 +1,93 @@
 # 🌿 My First Hyprland Rice
 
-This is my very first *rice* using **Hyprland**, a dynamic and highly customizable Wayland compositor.
-It's still a **work in progress**, so some components are unfinished or unconfigured.
+Welcome to my very first **rice** using **Hyprland** — a dynamic and highly customizable Wayland compositor.
+This setup is still **a work in progress**, so some parts are unfinished or not fully configured yet.
 
-### Current Setup:
-- **Hyprpanel** with a modified **Nord** theme
-- Terminal: **Kitty**
-- Launcher: **Rofi**
+---
 
-![First rice image](resources/My_first_rice.png)
+## 🎨 Screenshot
 
-## 🛠️ Full Installation Guide
+![My first rice](resources/My_first_rice.png)
 
-This guide sets up the essential packages and config symlinks required for this rice.
-It’s designed for Arch Linux (or Arch-based distros), and assumes you already have yay installed.
+---
+
+## 🗂️ Current Setup
+
+- **Hyprpanel** — custom **Nord**-inspired theme with transparent blurred background and widgets for workspace, clock, and system info.
+- **Kitty Terminal** — fast, GPU-accelerated terminal emulator.
+- **Rofi** — lightweight and highly configurable application launcher.
+- **zsh** — my default shell, powered by **Oh My Zsh** with the `zsh-autosuggestions` plugin for command suggestions, aliases, and a custom prompt theme.
+
+---
+
+## ⚙️ Full Installation Guide
+
+This guide installs all the essential packages and creates the necessary config symlinks to replicate this rice.
+It’s intended for **Arch Linux** or Arch-based distributions, and assumes you already have **yay** installed.
+
+---
 
 ## 🚀 Quick Setup (Copy & Paste)
 
 ```bash
-# --- Link your configuration files ---
+# --- Create config symlinks ---
 mkdir -p ~/.config
 
-ln -s ~/.config/hypr/hyprpanel/ ~/.config/hyprpanel # Hyprpanel
-ln -s ~/.config/hypr/kitty/ ~/.config/kitty         # Kitty terminal config
-ln -s ~/.config/hypr/rofi/ ~/.config/rofi           # Rofi launcher config
-ln -s ~/.config/hypr/zsh/.zshrc ~                   # zsh config
-ln -s ~/.config/hypr/vim/.vimrc ~                   # vim config
-ln -s ~/.config/hypr/vim ~/.vim                     # vim config
+ln -s ~/.config/hypr/hyprpanel/ ~/.config/hyprpanel   # Hyprpanel config
+ln -s ~/.config/hypr/kitty/ ~/.config/kitty           # Kitty terminal config
+ln -s ~/.config/hypr/rofi/ ~/.config/rofi             # Rofi launcher config
+ln -s ~/.config/hypr/zsh/.zshrc ~                     # zsh configuration file
+ln -s ~/.config/hypr/vim/.vimrc ~                     # Vim configuration file
+ln -s ~/.config/hypr/vim ~/.vim                       # Vim folder
 
-# --- Core packages and tools ---
+# --- Core packages ---
 sudo pacman -S \
-  uwsm \                                # Wayland session manager (needed by Hyprland)
-  nerd-fonts \                          # Icon-rich fonts (includes Font Awesome)
+  uwsm \                                # Wayland session manager for Hyprland
+  nerd-fonts \                          # Icon fonts (e.g. Font Awesome)
   rofi \                                # Application launcher
-  antimicrox \                          # Map gamepad buttons to keyboard/mouse
-  xdg-desktop-portal-hyprland \         # Enables screen sharing and other Wayland features
-  hyprpolkitagent \                     # Polkit agent for GUI sudo prompts
+  antimicrox \                          # Map gamepad to keyboard/mouse
+  xdg-desktop-portal-hyprland \         # Enables screen sharing, portals, etc.
+  hyprpolkitagent \                     # GUI Polkit agent for authentication prompts
   qt5-wayland qt6-wayland \             # Qt apps support in Wayland
   imv \                                 # Lightweight image viewer
-  catppuccin-gtk-theme \                # Nice-looking GTK theme
-  swww \                                # Wallpaper daemon used by hyprpanel
+  catppuccin-gtk-theme \                # Clean GTK theme
+  swww \                                # Wallpaper daemon
   curl
 
 # --- AUR packages (via yay) ---
 yay -S \
   hyprshot \                            # Screenshot tool for Wayland
-  ags-hyprpanel-git                     # Customizable Hyprland panel
+  ags-hyprpanel-git                     # Customizable Hyprland status bar
 
-# --- Optional: Install WhatsApp Web as a PWA ---
-# Open WhatsApp Web in Chromium/Firefox and install it as an app (PWA).
-# This enables it to autostart with the session.
+yay -S --needed \
+  aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass \
+  wl-clipboard swww python upower pacman-contrib gvfs gtksourceview3 libsoup3 \
+  wf-recorder-git hyprpicker matugen-bin python-gpustat
 
+# --- Install Oh My Zsh ---
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# --- Extra zsh plugins ---
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 ## 📦 What’s Included
-| Component                    | Purpose                                                             |
-|-----------------------------|----------------------------------------------------------------------|
-| `uwsm`                      | Starts and manages Wayland sessions                                  |
-| `nerd-fonts`                | Provides icon fonts (e.g. Font Awesome, for launchers and panels)    |
-| `rofi`                      | Fast and customizable application launcher                           |
-| `antimicrox`                | Maps game controller inputs to keyboard/mouse                        |
-| `xdg-desktop-portal-hyprland` | Enables screen sharing, global shortcuts, etc.                   |
-| `hyprpolkitagent`           | GUI agent for authentication prompts (e.g. password dialogs)         |
-| `qt5-wayland`, `qt6-wayland` | Ensures Qt apps (e.g. KDE apps) work properly under Wayland        |
-| `imv`                       | Lightweight and minimal image viewer                                 |
-| `catppuccin-gtk-theme`      | GTK theme for a cohesive visual style                                |
-| `swww`                      | Wallpaper daemon used with panels like hyprpanel                     |
-| `hyprshot` (AUR)            | Screenshot utility for Hyprland                                      |
-| `ags-hyprpanel-git` (AUR)   | Customizable status bar for Hyprland                                 |
+
+| Component                      | Description                                                                                  |
+|--------------------------------|----------------------------------------------------------------------------------------------|
+| **uwsm**                       | Wayland session manager required by Hyprland                                                 |
+| **nerd-fonts**                 | Icon-rich fonts (Font Awesome, Nerd icons) for panels, prompts, and terminals                |
+| **rofi**                       | Fast, highly customizable application launcher                                               |
+| **antimicrox**                 | Map game controller buttons to keyboard and mouse actions                                    |
+| **xdg-desktop-portal-hyprland** | Enables screen sharing, portal integrations, and desktop environment interoperability       |
+| **hyprpolkitagent**            | GUI Polkit agent to handle authentication prompts (e.g. sudo password dialogs)               |
+| **qt5-wayland**, **qt6-wayland** | Ensures that Qt5/Qt6 applications run smoothly under Wayland                                |
+| **imv**                        | Lightweight, simple image viewer for quick previews                                          |
+| **catppuccin-gtk-theme**       | Clean and cohesive GTK theme for applications with GTK interfaces                            |
+| **swww**                       | Wallpaper daemon for setting and transitioning backgrounds dynamically                       |
+| **hyprshot** *(AUR)*           | Screenshot tool specifically designed for Wayland and Hyprland                               |
+| **ags-hyprpanel-git** *(AUR)*  | Fully customizable status bar (panel) for Hyprland                                           |
+| **zsh + Oh My Zsh**            | Modern shell with plugins, theme management, command autosuggestions, and productivity tweaks |
 
 ## ✅ Requirements
 - Arch Linux or Arch-based distro
