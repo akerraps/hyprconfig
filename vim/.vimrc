@@ -32,9 +32,9 @@ set hlsearch              " Highlight all matches of the search
 " ------------------------------
 
 syntax on                 " Enable syntax highlighting
-"set termguicolors         " Enable 24-bit RGB colors in terminal
-"set background=dark       " Set background theme to dark
-"colorscheme zenburn
+set termguicolors         " Enable 24-bit RGB colors in terminal
+set background=dark       " Set background theme to dark
+colorscheme gruvbox
 
 " ------------------------------
 " USABILITY
