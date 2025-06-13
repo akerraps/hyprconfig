@@ -71,8 +71,11 @@ ZSH_THEME="fox"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-git
-dotenv
+  git
+  dotenv
+  z
+  sudo
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -82,11 +85,11 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='nvim'
 # fi
@@ -108,3 +111,15 @@ source $ZSH/oh-my-zsh.sh
 
 GBM_BACKEND=nvidia-drm
 __GLX_VENDOR_LIBRARY_NAME=nvidia
+
+ENABLE_CORRECTION="true"
+
+alias ll="ls -lsha"
+alias la="ls -A"
+alias gs="git status"
+alias gc="git commit"
+alias gp="git push"
+alias gl="git pull"
+alias v="vim"
+alias ..="cd .."
+alias ...="cd ../.."
