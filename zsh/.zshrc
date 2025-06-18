@@ -123,3 +123,6 @@ alias gl="git pull"
 alias v="vim"
 alias ..="cd .."
 alias ...="cd ../.."
+
+
+bindkey \^U backward-kill-line
