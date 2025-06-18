@@ -126,3 +126,13 @@ alias ...="cd ../.."
 
 
 bindkey \^U backward-kill-line
+
+# Ctrl-w - delete a full WORD (including colon, dot, comma, quotes...)
+my-backward-kill-word () {
+    # Add colon, comma, single/double quotes to word chars
+    local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>:,"'"'"
+    zle -f kill # Append to the kill ring on subsequent kills.
+    zle backward-kill-word
+}
+zle -N my-backward-kill-word
+bindkey '^w' my-backward-kill-word
