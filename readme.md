@@ -19,6 +19,7 @@ This setup is still **a work in progress**, so some parts are unfinished or not 
 - **Kitty Terminal** — fast, GPU-accelerated terminal emulator.
 - **Rofi** — lightweight and highly configurable application launcher.
 - **zsh** — my default shell, powered by **Oh My Zsh** with the `zsh-autosuggestions` plugin for command suggestions, aliases, and a custom prompt theme.
+- **Vim** — custom vim configuration, with shortcuts and a theme.
 
 ---
 
@@ -54,7 +55,8 @@ sudo pacman -S \
   imv \                                 # Lightweight image viewer
   catppuccin-gtk-theme \                # Clean GTK theme
   swww \                                # Wallpaper daemon
-  curl
+  curl \
+  lightdm
 
 # --- AUR packages (via yay) ---
 yay -S \
@@ -64,7 +66,7 @@ yay -S \
 yay -S --needed \
   aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass \
   wl-clipboard swww python upower pacman-contrib gvfs gtksourceview3 libsoup3 \
-  wf-recorder-git hyprpicker matugen-bin python-gpustat
+  wf-recorder-git hyprpicker matugen-bin python-gpustat rofi-greenclip
 
 # --- Install Oh My Zsh ---
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
