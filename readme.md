@@ -56,6 +56,7 @@ sudo pacman -S \
   catppuccin-gtk-theme \                # Clean GTK theme
   swww \                                # Wallpaper daemon
   curl \
+  cliphist \                            # Clipboard manager for rofi
   lightdm
 
 # --- AUR packages (via yay) ---
@@ -66,7 +67,7 @@ yay -S \
 yay -S --needed \
   aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass \
   wl-clipboard swww python upower pacman-contrib gvfs gtksourceview3 libsoup3 \
-  wf-recorder-git hyprpicker matugen-bin python-gpustat rofi-greenclip
+  wf-recorder-git hyprpicker matugen-bin python-gpustat
 
 # --- Install Oh My Zsh ---
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

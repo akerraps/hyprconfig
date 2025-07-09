@@ -466,7 +466,10 @@
   "menus.media.displayTime": false,
   "theme.bar.buttons.media.enableBorder": false,
   "bar.workspaces.monitorSpecific": true,
-  "theme.matugen": true,
+  "theme.matugen": false,
   "theme.matugen_settings.mode": "dark",
-  "theme.matugen_settings.scheme_type": "tonal-spot"
+  "theme.matugen_settings.scheme_type": "tonal-spot",
+  "bar.customModules.storage.paths": [
+    "/"
+  ]
 }
