@@ -42,6 +42,7 @@ ln -s ~/.config/hypr/rofi/ ~/.config/rofi             # Rofi launcher config
 ln -s ~/.config/hypr/zsh/.zshrc ~                     # zsh configuration file
 ln -s ~/.config/hypr/vim/.vimrc ~                     # Vim configuration file
 ln -s ~/.config/hypr/vim ~/.vim                       # Vim folder
+ln -s ~/.config/hypr/spicetify ~/.config              # Spotify custom themes
 
 # --- Core packages ---
 sudo pacman -S \
@@ -62,7 +63,8 @@ sudo pacman -S \
 # --- AUR packages (via yay) ---
 yay -S \
   hyprshot \                            # Screenshot tool for Wayland
-  ags-hyprpanel-git                     # Customizable Hyprland status bar
+  ags-hyprpanel-git \                    # Customizable Hyprland status bar
+  spicetify-cli
 
 yay -S --needed \
   aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass \
