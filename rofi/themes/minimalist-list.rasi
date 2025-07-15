@@ -23,9 +23,8 @@ window {
     border: 1px;
     border-color: @accent;
     border-radius: 10px;
-    padding: 12px;
-    width: 40%;
-    height: 40%;
+    padding: 8px;
+    width: 15%;
     location: north;
     anchor: center;
 }
@@ -52,18 +51,18 @@ entry {
 }
 
 listview {
-    lines: 8;
+    lines: 10;
     columns: 1;
     spacing: 6px;
-    fixed-height: false;
     margin: 12px 0px 0px 0px;
 }
 
 element {
-    children: [ element-text ];
-    orientation: vertical;
-    padding: 10px 12px;
-    border-radius: 6px;
+    children: [ element-icon, element-text ];
+    orientation: horizontal;
+    spacing: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
     background-color: transparent;
     cursor: pointer;
 }
@@ -74,10 +73,14 @@ element normal {
 
 element selected {
     background-color: @accent-secondary;
-    border-radius: 6px;
+    border-radius: 8px;
+}
+
+element-icon {
+    size: 1.5em;
+    border-radius: 50%;
 }
 
 element-text {
     text-color: @text;
-    font-weight: 400;
 }
