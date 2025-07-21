@@ -64,7 +64,6 @@ sudo pacman -S \
 yay -S \
   hyprshot \                            # Screenshot tool for Wayland
   ags-hyprpanel-git \                    # Customizable Hyprland status bar
-  spicetify-cli
 
 yay -S --needed \
   aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass \
@@ -76,6 +75,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # --- Extra zsh plugins ---
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+bash ~/.config/hypr/grub-themes/install.sh
 ```
 
 ## 📦 What’s Included
