@@ -1,7 +1,7 @@
-#You said:
-# Windows Theme For Grub
-# Made By :- Vivek_Rajan
-# Repository :- https://github.com/MrVivekRajan/Grub-Themes
+# Theme for GRUB (based on the original work)
+# Based on the theme by Vivek_Rajan
+# Original repository: https://github.com/MrVivekRajan/Grub-Themes
+# Modified by: Akerraps – with custom changes
 
 
 # BACKGROUND-IMAGE
