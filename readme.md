@@ -43,6 +43,7 @@ ln -s ~/.config/hypr/zsh/.zshrc ~                     # zsh configuration file
 ln -s ~/.config/hypr/vim/.vimrc ~                     # Vim configuration file
 ln -s ~/.config/hypr/vim ~/.vim                       # Vim folder
 ln -s ~/.config/hypr/spicetify ~/.config              # Spotify custom themes
+ln -s ~/.config/hypr/sddm/sddm.conf /etc/sddm.conf
 
 # --- Core packages ---
 sudo pacman -S \
@@ -60,12 +61,14 @@ sudo pacman -S \
   cliphist \                            # Clipboard manager for rofi
   sddm \
   hyprcursor \
-  phinger-cursors
+
 
 # --- AUR packages (via yay) ---
 yay -S \
   hyprshot \                            # Screenshot tool for Wayland
   ags-hyprpanel-git \                    # Customizable Hyprland status bar
+  sddm-silent-theme \
+  phinger-cursors
 
 yay -S --needed \
   aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass \
