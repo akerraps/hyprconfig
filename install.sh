@@ -6,8 +6,8 @@ echo "Starting Hyprland rice installation..."
 
 # === Ensure git and yay are installed ===
 if ! command -v yay &>/dev/null; then
-  echo "📦 Installing yay (AUR helper)..."
-  sudo pacman -S --needed git base-devel
+  echo "Installing yay (AUR helper)..."
+  sudo pacman -S --needed --noconfirm git base-devel
   git clone https://aur.archlinux.org/yay-bin.git
   cd yay-bin
   makepkg -si --noconfirm
@@ -20,10 +20,10 @@ CONFIG_REPO="https://github.com/akerraps/hyprconfig.git"
 CONFIG_CLONE_PATH="$HOME/.config/hypr"
 
 if [ ! -d "$CONFIG_CLONE_PATH" ]; then
-  echo "🔄 Cloning Hyprland config from $CONFIG_REPO..."
+  echo "Cloning Hyprland config from $CONFIG_REPO..."
   git clone "$CONFIG_REPO" "$CONFIG_CLONE_PATH"
 else
-  echo "📁 Config directory already exists: $CONFIG_CLONE_PATH"
+  echo "Config directory already exists: $CONFIG_CLONE_PATH"
 fi
 
 # === Set constants ===
@@ -52,18 +52,28 @@ declare -A SYMLINKS=(
 
 for src in "${!SYMLINKS[@]}"; do
   dest="${SYMLINKS[$src]}"
-  if [ -e "$dest" ] || [ -L "$dest" ]; then
-    echo "Skipping existing: $dest"
+  if [ "$dest" = "/etc/sddm.conf" ]; then
+    if [ -e "$dest" ] || [ -L "$dest" ]; then
+      echo "Skipping existing (requires sudo): $dest"
+    else
+      echo "Creating symlink with sudo: $src → $dest"
+      sudo ln -s "$src" "$dest"
+    fi
   else
-    ln -s "$src" "$dest"
-    echo "Linked $src → $dest"
+    if [ -e "$dest" ] || [ -L "$dest" ]; then
+      echo "Skipping existing: $dest"
+    else
+      ln -s "$src" "$dest"
+      echo "Linked $src → $dest"
+    fi
   fi
 done
+
 
 # === Install Core Packages ===
 echo "Installing core packages..."
 
-sudo pacman -S --needed \
+sudo pacman -S --needed --noconfirm \
   uwsm nerd-fonts rofi antimicrox \
   xdg-desktop-portal-hyprland hyprpolkitagent \
   qt5-wayland qt6-wayland imv swww \
@@ -73,7 +83,8 @@ sudo pacman -S --needed \
 # === AUR Packages ===
 echo "Installing AUR packages with yay..."
 
-yay -S --needed \
+# IMPORTANT: Run yay as your normal user (no sudo)
+yay -S --needed --noconfirm \
   hyprshot ags-hyprpanel-git sddm-silent-theme \
   phinger-cursors aylurs-gtk-shell-git wireplumber \
   libgtop bluez bluez-utils btop networkmanager \
