@@ -58,7 +58,9 @@ sudo pacman -S \
   swww \                                # Wallpaper daemon
   curl \
   cliphist \                            # Clipboard manager for rofi
-  lightdm
+  sddm \
+  hyprcursor \
+  phinger-cursors
 
 # --- AUR packages (via yay) ---
 yay -S \
@@ -77,6 +79,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 bash ~/.config/hypr/grub-themes/install.sh
+
+mkdir -p ~/.icons/default
+ln -s ln -s ~/.config/hypr/cursors/index.theme ~/.icons/default/index.theme
+ln -s ~/.config/hypr/cursors/settings.ini ~/.config/gtk-3.0/settings.ini
 ```
 
 ## 📦 What’s Included
