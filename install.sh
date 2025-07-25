@@ -4,8 +4,29 @@ set -e
 
 echo "Starting Hyprland rice installation..."
 
-# === Constants ===
-CONFIG_DIR="$HOME/.config/hypr"
+# === Ensure git and yay are installed ===
+if ! command -v yay &>/dev/null; then
+  echo "📦 Installing yay (AUR helper)..."
+  sudo pacman -S --needed git base-devel
+  git clone https://aur.archlinux.org/yay-bin.git
+  cd yay-bin
+  makepkg -si --noconfirm
+  cd ..
+  rm -rf yay-bin
+fi
+
+# === Clone config repository ===
+CONFIG_REPO="https://github.com/akerraps/hyprconfig.git"
+CONFIG_CLONE_PATH="$HOME/.config/hypr"
+
+if [ ! -d "$CONFIG_CLONE_PATH" ]; then
+  echo "🔄 Cloning Hyprland config from $CONFIG_REPO..."
+  git clone "$CONFIG_REPO" "$CONFIG_CLONE_PATH"
+else
+  echo "📁 Config directory already exists: $CONFIG_CLONE_PATH"
+fi
+
+# === Set constants ===
 TARGET_CONFIG="$HOME/.config"
 
 # === Create necessary directories ===
@@ -17,16 +38,16 @@ mkdir -p "$HOME/.config/gtk-3.0"
 echo "Creating config symlinks..."
 
 declare -A SYMLINKS=(
-  ["$CONFIG_DIR/hyprpanel"]="$TARGET_CONFIG/hyprpanel"
-  ["$CONFIG_DIR/kitty"]="$TARGET_CONFIG/kitty"
-  ["$CONFIG_DIR/rofi"]="$TARGET_CONFIG/rofi"
-  ["$CONFIG_DIR/zsh/.zshrc"]="$HOME/.zshrc"
-  ["$CONFIG_DIR/vim/.vimrc"]="$HOME/.vimrc"
-  ["$CONFIG_DIR/vim"]="$HOME/.vim"
-  ["$CONFIG_DIR/spicetify"]="$TARGET_CONFIG/spicetify"
-  ["$CONFIG_DIR/sddm/sddm.conf"]="/etc/sddm.conf"
-  ["$CONFIG_DIR/cursors/index.theme"]="$HOME/.icons/default/index.theme"
-  ["$CONFIG_DIR/cursors/settings.ini"]="$HOME/.config/gtk-3.0/settings.ini"
+  ["$CONFIG_CLONE_PATH/hyprpanel"]="$TARGET_CONFIG/hyprpanel"
+  ["$CONFIG_CLONE_PATH/kitty"]="$TARGET_CONFIG/kitty"
+  ["$CONFIG_CLONE_PATH/rofi"]="$TARGET_CONFIG/rofi"
+  ["$CONFIG_CLONE_PATH/zsh/.zshrc"]="$HOME/.zshrc"
+  ["$CONFIG_CLONE_PATH/vim/.vimrc"]="$HOME/.vimrc"
+  ["$CONFIG_CLONE_PATH/vim"]="$HOME/.vim"
+  ["$CONFIG_CLONE_PATH/spicetify"]="$TARGET_CONFIG/spicetify"
+  ["$CONFIG_CLONE_PATH/sddm/sddm.conf"]="/etc/sddm.conf"
+  ["$CONFIG_CLONE_PATH/cursors/index.theme"]="$HOME/.icons/default/index.theme"
+  ["$CONFIG_CLONE_PATH/cursors/settings.ini"]="$HOME/.config/gtk-3.0/settings.ini"
 )
 
 for src in "${!SYMLINKS[@]}"; do
@@ -50,7 +71,7 @@ sudo pacman -S --needed \
   catppuccin-gtk-theme kitty
 
 # === AUR Packages ===
-echo "Installing AUR packages..."
+echo "Installing AUR packages with yay..."
 
 yay -S --needed \
   hyprshot ags-hyprpanel-git sddm-silent-theme \
@@ -70,9 +91,9 @@ echo "Installing zsh-autosuggestions plugin..."
 git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" || echo "Already installed"
 
 # === Run custom scripts ===
-if [ -f "$CONFIG_DIR/grub-themes/install.sh" ]; then
+if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
   echo "Running grub theme installer..."
-  bash "$CONFIG_DIR/grub-themes/install.sh"
+  bash "$CONFIG_CLONE_PATH/grub-themes/install.sh"
 fi
 
-echo "Installation completed successfully!"
+echo "Hyprland rice installation completed!"
