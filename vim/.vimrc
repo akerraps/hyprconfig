@@ -72,8 +72,33 @@ nnoremap <leader>rn :set relativenumber!<CR>
 " Clear search highlights with Enter
 nnoremap <CR> :nohlsearch<CR>
 
+" Fuzzy search
+" nnoremap <C-f> :Files<Cr>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 " ------------------------------
 " FINAL SETTINGS
 " ------------------------------
 
 filetype plugin indent on   " Enable filetype-specific plugins and indentation
+
+call plug#begin()
+    Plug 'fatih/vim-go' 
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'preservim/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'PhilRunninger/nerdtree-buffer-ops'
+    Plug 'PhilRunninger/nerdtree-visual-selection'
+
+call plug#end()
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
