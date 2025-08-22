@@ -82,6 +82,9 @@ sudo pacman -S --needed --noconfirm \
 
 curl -f https://zed.dev/install.sh | sh
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # === AUR Packages ===
 echo "Installing AUR packages with yay..."
 
