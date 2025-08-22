@@ -46,6 +46,7 @@ set wildmenu              " Enhanced command-line completion
 set cursorline            " Highlight the current line
 set showcmd               " Show incomplete commands
 set showmode              " Show current mode (normal/insert/visual/etc)
+highlight Normal ctermbg=NONE guibg=NONE
 
 " ------------------------------
 " CUSTOM KEYBINDINGS
@@ -138,6 +139,7 @@ call plug#begin()
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'PhilRunninger/nerdtree-buffer-ops'
     Plug 'PhilRunninger/nerdtree-visual-selection'
+    Plug 'airblade/vim-rooter'
 
 call plug#end()
 
