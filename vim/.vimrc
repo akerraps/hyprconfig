@@ -5,7 +5,7 @@
 set nocompatible          " Disable compatibility with old vi
 set encoding=utf-8        " Use UTF-8 encoding
 set number                " Show absolute line numbers
-"set relativenumber        " Show relative line numbers (useful for navigation)
+set relativenumber        " Show relative line numbers (useful for navigation)
 set clipboard=unnamedplus " Use system clipboard for yank/paste
 
 " ------------------------------
@@ -72,12 +72,55 @@ nnoremap <leader>rn :set relativenumber!<CR>
 " Clear search highlights with Enter
 nnoremap <CR> :nohlsearch<CR>
 
-" Fuzzy search
-" nnoremap <C-f> :Files<Cr>
+" ------------------------------
+" Buffer management
+" ------------------------------
+
+" List buffers
+nnoremap <leader>bl :ls<CR>
+
+" Next / Previous buffer
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+
+" Delete current buffer
+nnoremap <leader>bd :bdelete<CR>
+
+" Quickly switch to last buffer
+nnoremap <leader><leader> <C-^>
+
+" ------------------------------
+" FZF Integrations
+" ------------------------------
+
+" Search files (fzf)
+nnoremap <C-p>     :Files<CR>
+nnoremap <leader>f :Files<CR>
+
+" Search in open buffers
+nnoremap <leader>b :Buffers<CR>
+
+" Super fast text search (requires ripgrep)
+nnoremap <leader>g :Rg<CR>
+
+" Search command history
+nnoremap <leader>h :History:<CR>
+
+" ------------------------------
+" NERDTree Integrations
+" ------------------------------
+" Focus NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+
+" Open NERDTree
+nnoremap <C-n>     :NERDTree<CR>
+
+" Toggle NERDTree
+nnoremap <C-t>     :NERDTreeToggle<CR>
+
+" Find current file in NERDTree
+nnoremap <C-f>     :NERDTreeFind<CR>
+
 " ------------------------------
 " FINAL SETTINGS
 " ------------------------------
@@ -85,6 +128,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 filetype plugin indent on   " Enable filetype-specific plugins and indentation
 
 call plug#begin()
+
     Plug 'fatih/vim-go' 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -97,8 +141,13 @@ call plug#begin()
 
 call plug#end()
 
+" NERTree configurations
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+
+" Show hidden files
+let NERDTreeShowHidden=1
+
