@@ -4,8 +4,8 @@
 
 set nocompatible          " Disable compatibility with old vi
 set encoding=utf-8        " Use UTF-8 encoding
-set number                " Show absolute line numbers
-set relativenumber        " Show relative line numbers (useful for navigation)
+" set number                " Show absolute line numbers
+" set relativenumber        " Show relative line numbers (useful for navigation)
 set clipboard=unnamedplus " Use system clipboard for yank/paste
 
 " ------------------------------
@@ -95,7 +95,7 @@ nnoremap <leader><leader> <C-^>
 " ------------------------------
 
 " Search files (fzf)
-nnoremap <C-p>     :Files<CR>
+nnoremap <C-f>     :Files<CR>
 nnoremap <leader>f :Files<CR>
 
 " Search in open buffers
@@ -110,6 +110,7 @@ nnoremap <leader>h :History:<CR>
 " ------------------------------
 " NERDTree Integrations
 " ------------------------------
+
 " Focus NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
 
@@ -118,9 +119,24 @@ nnoremap <C-n>     :NERDTree<CR>
 
 " Toggle NERDTree
 nnoremap <C-t>     :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 " Find current file in NERDTree
-nnoremap <C-f>     :NERDTreeFind<CR>
+nnoremap <C-p>     :NERDTreeFind<CR>
+nnoremap <leader>p :NERDTreeFind<CR>
+
+" Move between windows (splits)
+nnoremap <C-h> <C-w>h
+nnoremap <leader>h <C-w>h
+
+nnoremap <C-j> <C-w>j
+nnoremap <leader>j <C-w>j
+
+nnoremap <C-k> <C-w>k
+nnoremap <leader>k <C-w>k
+
+nnoremap <C-l> <C-w>l
+nnoremap <leader>l <C-w>l
 
 " ------------------------------
 " FINAL SETTINGS
