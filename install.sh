@@ -33,6 +33,7 @@ TARGET_CONFIG="$HOME/.config"
 mkdir -p "$TARGET_CONFIG"
 mkdir -p "$HOME/.icons/default"
 mkdir -p "$HOME/.config/gtk-3.0"
+mkdir -p "$HOME/.config/nvim"
 
 # === Symlinks ===
 echo "Creating config symlinks..."
@@ -44,6 +45,8 @@ declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/zsh/.zshrc"]="$HOME/.zshrc"
   ["$CONFIG_CLONE_PATH/vim/.vimrc"]="$HOME/.vimrc"
   ["$CONFIG_CLONE_PATH/vim"]="$HOME/.vim"
+  ["$CONFIG_CLONE_PATH/vim/.vimrc"]="$HOME/nvim/init.vim"
+  ["$CONFIG_CLONE_PATH/vim/colors"]="$HOME/nvim/colors"
   ["$CONFIG_CLONE_PATH/spicetify"]="$TARGET_CONFIG/spicetify"
   ["$CONFIG_CLONE_PATH/sddm/sddm.conf"]="/etc/sddm.conf"
   ["$CONFIG_CLONE_PATH/cursors/index.theme"]="$HOME/.icons/default/index.theme"
@@ -84,6 +87,9 @@ curl -f https://zed.dev/install.sh | sh
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # === AUR Packages ===
 echo "Installing AUR packages with yay..."
