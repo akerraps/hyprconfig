@@ -168,3 +168,4 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " Show hidden files
 let NERDTreeShowHidden=1
 
+
