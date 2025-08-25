@@ -127,7 +127,6 @@ nnoremap <leader>p :NERDTreeFind<CR>
 
 " Move between windows (splits)
 nnoremap <C-h> <C-w>h
-nnoremap <leader>h <C-w>h
 
 nnoremap <C-j> <C-w>j
 nnoremap <leader>j <C-w>j
