@@ -145,7 +145,7 @@ filetype plugin indent on   " Enable filetype-specific plugins and indentation
 
 call plug#begin()
 
-    Plug 'fatih/vim-go' 
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'preservim/nerdtree'
@@ -155,6 +155,8 @@ call plug#begin()
     Plug 'PhilRunninger/nerdtree-buffer-ops'
     Plug 'PhilRunninger/nerdtree-visual-selection'
     Plug 'airblade/vim-rooter'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -168,4 +170,5 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " Show hidden files
 let NERDTreeShowHidden=1
 
-
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'

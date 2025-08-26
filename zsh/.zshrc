@@ -124,7 +124,7 @@ alias v="vim"
 alias ..="cd .."
 alias ...="cd ../.."
 alias yay=yay --aur
-
+alias vim="nvim"
 
 bindkey \^U backward-kill-line
 
