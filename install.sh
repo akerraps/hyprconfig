@@ -81,7 +81,7 @@ sudo pacman -S --needed --noconfirm \
   xdg-desktop-portal-hyprland hyprpolkitagent \
   qt5-wayland qt6-wayland imv swww \
   curl cliphist sddm hyprcursor \
-  kitty zsh curl dolphin
+  kitty zsh curl dolphin go
 
 curl -f https://zed.dev/install.sh | sh
 
@@ -117,5 +117,7 @@ if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
   echo "Running grub theme installer..."
   bash "$CONFIG_CLONE_PATH/grub-themes/install.sh"
 fi
+
+go install golang.org/x/tools/gopls@latest
 
 echo "Hyprland rice installation completed!"
