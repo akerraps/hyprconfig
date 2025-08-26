@@ -7,6 +7,7 @@ set encoding=utf-8        " Use UTF-8 encoding
 " set number                " Show absolute line numbers
 " set relativenumber        " Show relative line numbers (useful for navigation)
 set clipboard=unnamedplus " Use system clipboard for yank/paste
+set mouse=
 
 " ------------------------------
 " INDENTATION
@@ -157,6 +158,8 @@ call plug#begin()
     Plug 'airblade/vim-rooter'
     Plug 'sheerun/vim-polyglot'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'charlespascoe/vim-go-syntax'
 
 call plug#end()
 
@@ -172,3 +175,17 @@ let NERDTreeShowHidden=1
 
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+let g:coc_global_extensions = ['coc-go', 'coc-json']
+let g:go_fmt_command = "goimports"
+
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
