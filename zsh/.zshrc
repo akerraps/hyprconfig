@@ -25,7 +25,7 @@ ZSH_THEME="fox"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -41,7 +41,7 @@ ZSH_THEME="fox"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -89,7 +89,7 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
+export EDITOR='nvim'
 # else
 #   export EDITOR='nvim'
 # fi
@@ -120,7 +120,7 @@ alias gs="git status"
 alias gc="git commit"
 alias gp="git push"
 alias gl="git pull"
-alias v="vim"
+alias v="nvim"
 alias ..="cd .."
 alias ...="cd ../.."
 alias yay=yay --aur
