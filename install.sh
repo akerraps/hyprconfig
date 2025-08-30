@@ -81,7 +81,7 @@ sudo pacman -S --needed --noconfirm \
   xdg-desktop-portal-hyprland hyprpolkitagent \
   qt5-wayland qt6-wayland imv swww \
   curl cliphist sddm hyprcursor \
-  kitty zsh curl dolphin go
+  kitty zsh curl dolphin go xclip wl-clipboard
 
 curl -f https://zed.dev/install.sh | sh
 
