@@ -17,7 +17,7 @@ fi
 
 # === Clone config repository ===
 CONFIG_REPO="https://github.com/akerraps/hyprconfig.git"
-CONFIG_CLONE_PATH="$HOME/.config/hypr"
+CONFIG_CLONE_PATH="$HOME/.config/hyprconfig"
 
 if [ ! -d "$CONFIG_CLONE_PATH" ]; then
   echo "Cloning Hyprland config from $CONFIG_REPO..."
@@ -45,12 +45,14 @@ declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/zsh/.zshrc"]="$HOME/.zshrc"
   ["$CONFIG_CLONE_PATH/vim/.vimrc"]="$HOME/.vimrc"
   ["$CONFIG_CLONE_PATH/vim"]="$HOME/.vim"
-  ["$CONFIG_CLONE_PATH/vim/.vimrc"]="$HOME/nvim/init.vim"
-  ["$CONFIG_CLONE_PATH/vim/colors"]="$HOME/nvim/colors"
+  ["$CONFIG_CLONE_PATH/vim/.vimrc"]="$TARGET_CONFIG/nvim/init.vim"
+  ["$CONFIG_CLONE_PATH/vim/colors"]="$TARGET_CONFIG/nvim/colors"
   ["$CONFIG_CLONE_PATH/spicetify"]="$TARGET_CONFIG/spicetify"
   ["$CONFIG_CLONE_PATH/sddm/sddm.conf"]="/etc/sddm.conf"
   ["$CONFIG_CLONE_PATH/cursors/index.theme"]="$HOME/.icons/default/index.theme"
-  ["$CONFIG_CLONE_PATH/cursors/settings.ini"]="$HOME/.config/gtk-3.0/settings.ini"
+  ["$CONFIG_CLONE_PATH/cursors/settings.ini"]="$TARGET_CONFIG/gtk-3.0/settings.ini"
+  ["$CONFIG_CLONE_PATH/config/"]="$TARGET_CONFIG/hypr/"
+  ["$CONFIG_CLONE_PATH/hyprland.conf"]="$TARGET_CONFIG//hypr/hyprland.conf"
 )
 
 for src in "${!SYMLINKS[@]}"; do
@@ -81,15 +83,18 @@ sudo pacman -S --needed --noconfirm \
   xdg-desktop-portal-hyprland hyprpolkitagent \
   qt5-wayland qt6-wayland imv swww \
   curl cliphist sddm hyprcursor \
-  kitty zsh curl dolphin go xclip wl-clipboard
+  kitty zsh curl dolphin go xclip wl-clipboard less tree	
 
-curl -f https://zed.dev/install.sh | sh
+#curl -f https://zed.dev/install.sh | sh
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+vim +PlugInstall +qall
+nvim +PlugInstall +qall
 
 # === AUR Packages ===
 echo "Installing AUR packages with yay..."
@@ -115,7 +120,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/
 # === Run custom scripts ===
 if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
   echo "Running grub theme installer..."
-  bash "$CONFIG_CLONE_PATH/grub-themes/install.sh"
+  cd $CONFIG_CLONE_PATH/grub-themes/ 
+  sudo bash "$CONFIG_CLONE_PATH/grub-themes/install.sh"
 fi
 
 go install golang.org/x/tools/gopls@latest
