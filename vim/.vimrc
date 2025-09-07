@@ -160,7 +160,7 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'jiangmiao/auto-pairs'
     Plug 'charlespascoe/vim-go-syntax'
-
+    Plug 'farmergreg/vim-lastplace'
 call plug#end()
 
 " NERTree configurations

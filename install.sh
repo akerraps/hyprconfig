@@ -105,7 +105,7 @@ yay -S --needed --noconfirm \
   libgtop bluez bluez-utils btop networkmanager \
   dart-sass wl-clipboard python upower pacman-contrib \
   gvfs gtksourceview3 libsoup3 wf-recorder-git \
-  hyprpicker matugen-bin python-gpustat
+  hyprpicker matugen-bin python-gpustat zen-browser-bin brave-bin
 
 # === Oh My Zsh Setup ===
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
