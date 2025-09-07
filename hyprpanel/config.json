@@ -446,7 +446,7 @@
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "wallpaper.enable": true,
   "wallpaper.pywal": false,
-  "wallpaper.image": "/home/akerraps/.config/hypr/images/wallpaper.jpg",
+  "wallpaper.image": "/home/akerraps/.config/hyprconfig/images/wallpaper.jpg",
   "theme.bar.buttons.separator.color": "#585b7000",
   "bar.customModules.worldclock.showIcon": false,
   "bar.customModules.worldclock.tz": [
