@@ -107,6 +107,8 @@ fi
 echo "Installing zsh-autosuggestions plugin..."
 git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" || echo "Already installed"
 
+ln -sf $CONFIG_CLONE_PATH/zsh/.zshrc $HOME/.zshrc
+
 # === Run custom scripts ===
 if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
   echo "Running grub theme installer..."
