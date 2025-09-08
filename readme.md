@@ -19,8 +19,9 @@ This setup is still **a work in progress**, so some parts are unfinished or not 
 - **Kitty Terminal** — fast, GPU-accelerated terminal emulator.
 - **Rofi** — lightweight and highly configurable application launcher.
 - **zsh** — my default shell, powered by **Oh My Zsh** with the `zsh-autosuggestions` plugin for command suggestions, aliases, and a custom prompt theme.
-- **Vim** — custom vim configuration, with shortcuts and a theme.
-
+- **Neovim** — Main editor, configured with shared Vim/Neovim settings, plugins, and themes via vim-plug.
+- **SDDM** — Display/login manager with a minimal silent theme and custom configuration.
+- **GRUB** — Customized bootloader with themed setup from the repo.
 ---
 
 ## ⚙️ Full Installation Guide
