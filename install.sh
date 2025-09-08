@@ -40,7 +40,9 @@ echo "Creating config symlinks..."
 
 declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/hyprpanel"]="$TARGET_CONFIG/hyprpanel"
-  ["$CONFIG_CLONE_PATH/kitty"]="$TARGET_CONFIG/kitty"
+  ["$CONFIG_CLONE_PATH/kitty/kitty.conf"]="$TARGET_CONFIG/kitty/kitty.conf"
+  ["$CONFIG_CLONE_PATH/kitty/kitty-themes/"]="$TARGET_CONFIG/kitty/kitty-themes"
+  ["$TARGET_CONFIG/kitty/kitty-themes/themes/Desert.conf"]="$TARGET_CONFIG/kitty/theme.conf"
   ["$CONFIG_CLONE_PATH/rofi"]="$TARGET_CONFIG/rofi"
   ["$CONFIG_CLONE_PATH/zsh/.zshrc"]="$HOME/.zshrc"
   ["$CONFIG_CLONE_PATH/vim"]="$HOME/.vim"
@@ -83,7 +85,7 @@ sudo pacman -S --needed --noconfirm \
   qt5-wayland qt6-wayland imv swww libsoup3 dart-sass \
   curl cliphist sddm hyprcursor gtksourceview3 \
   libgtop bluez bluez-utils btop networkmanager hyprpicker \
-  kitty zsh curl dolphin go xclip wl-clipboard less tree \
+  kitty zsh curl nvim dolphin go xclip wl-clipboard less tree \
   grub ntfs-3g python upower pacman-contrib gvfs wl-clipboard 
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
