@@ -59,19 +59,11 @@ declare -A SYMLINKS=(
 for src in "${!SYMLINKS[@]}"; do
   dest="${SYMLINKS[$src]}"
   if [ "$dest" = "/etc/sddm.conf" ]; then
-    if [ -e "$dest" ] || [ -L "$dest" ]; then
-      echo "Skipping existing (requires sudo): $dest"
-    else
-      echo "Creating symlink with sudo: $src → $dest"
-      sudo ln -s "$src" "$dest"
-    fi
+    echo "Creating symlink with sudo: $src → $dest"
+    sudo ln -sf "$src" "$dest"
   else
-    if [ -e "$dest" ] || [ -L "$dest" ]; then
-      echo "Skipping existing: $dest"
-    else
-      ln -s "$src" "$dest"
-      echo "Linked $src → $dest"
-    fi
+    ln -sf "$src" "$dest"
+    echo "Linked $src → $dest"
   fi
 done
 
