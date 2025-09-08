@@ -75,7 +75,7 @@ sudo pacman -S --needed --noconfirm \
   hyprshot uwsm nerd-fonts rofi antimicrox \
   xdg-desktop-portal-hyprland hyprpolkitagent wireplumber \
   qt5-wayland qt6-wayland imv swww libsoup3 dart-sass \
-  curl cliphist sddm hyprcursor gtksourceview3 \
+  curl cliphist sddm hyprcursor spotify-launcher gtksourceview3 \
   libgtop bluez bluez-utils btop networkmanager hyprpicker \
   kitty zsh curl nvim dolphin go xclip wl-clipboard less tree \
   grub ntfs-3g python upower pacman-contrib gvfs wl-clipboard 
@@ -96,7 +96,7 @@ echo "Installing AUR packages with yay..."
 yay -S --needed --noconfirm \
   ags-hyprpanel-git sddm-silent-theme phinger-cursors \
   aylurs-gtk-shell-git wf-recorder-git matugen-bin python-gpustat \
-  zen-browser-bin brave-bin
+  zen-browser-bin brave-bin catppuccin-gtk-theme-frappe
 
 # === Oh My Zsh Setup ===
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
