@@ -26,87 +26,57 @@ This setup is still **a work in progress**, so some parts are unfinished or not 
 ## ⚙️ Full Installation Guide
 
 This guide installs all the essential packages and creates the necessary config symlinks to replicate this rice.
-It’s intended for **Arch Linux** or Arch-based distributions, and assumes you already have **yay** installed.
+It’s intended for **Arch Linux** or Arch-based distributions. 
 
 ---
 
 ## 🚀 Quick Setup (Copy & Paste)
 
 ```bash
-# --- Create config symlinks ---
-mkdir -p ~/.config
-
-ln -s ~/.config/hypr/hyprpanel/ ~/.config/hyprpanel   # Hyprpanel config
-ln -s ~/.config/hypr/kitty/ ~/.config/kitty           # Kitty terminal config
-ln -s ~/.config/hypr/rofi/ ~/.config/rofi             # Rofi launcher config
-ln -s ~/.config/hypr/zsh/.zshrc ~                     # zsh configuration file
-ln -s ~/.config/hypr/vim/.vimrc ~                     # Vim configuration file
-ln -s ~/.config/hypr/vim ~/.vim                       # Vim folder
-ln -s ~/.config/hypr/spicetify ~/.config              # Spotify custom themes
-ln -s ~/.config/hypr/sddm/sddm.conf /etc/sddm.conf
-
-# --- Core packages ---
-sudo pacman -S \
-  uwsm \                                # Wayland session manager for Hyprland
-  nerd-fonts \                          # Icon fonts (e.g. Font Awesome)
-  rofi \                                # Application launcher
-  antimicrox \                          # Map gamepad to keyboard/mouse
-  xdg-desktop-portal-hyprland \         # Enables screen sharing, portals, etc.
-  hyprpolkitagent \                     # GUI Polkit agent for authentication prompts
-  qt5-wayland qt6-wayland \             # Qt apps support in Wayland
-  imv \                                 # Lightweight image viewer
-  catppuccin-gtk-theme \                # Clean GTK theme
-  swww \                                # Wallpaper daemon
-  curl \
-  cliphist \                            # Clipboard manager for rofi
-  sddm \
-  hyprcursor \
-
-
-# --- AUR packages (via yay) ---
-yay -S \
-  hyprshot \                            # Screenshot tool for Wayland
-  ags-hyprpanel-git \                    # Customizable Hyprland status bar
-  sddm-silent-theme \
-  phinger-cursors
-
-yay -S --needed \
-  aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass \
-  wl-clipboard swww python upower pacman-contrib gvfs gtksourceview3 libsoup3 \
-  wf-recorder-git hyprpicker matugen-bin python-gpustat
-
-# --- Install Oh My Zsh ---
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# --- Extra zsh plugins ---
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-bash ~/.config/hypr/grub-themes/install.sh
-
-mkdir -p ~/.icons/default
-ln -s ln -s ~/.config/hypr/cursors/index.theme ~/.icons/default/index.theme
-ln -s ~/.config/hypr/cursors/settings.ini ~/.config/gtk-3.0/settings.ini
+git clone https://github.com/akerraps/hyprconfig.git ~/.config/hyprconfig && bash ~/.config/hyprconfig/install.sh
 ```
 
-## 📦 What’s Included
+### 📦 What’s Included
 
-| Component                      | Description                                                                                  |
-|--------------------------------|----------------------------------------------------------------------------------------------|
-| **uwsm**                       | Wayland session manager required by Hyprland                                                 |
-| **nerd-fonts**                 | Icon-rich fonts (Font Awesome, Nerd icons) for panels, prompts, and terminals                |
-| **rofi**                       | Fast, highly customizable application launcher                                               |
-| **antimicrox**                 | Map game controller buttons to keyboard and mouse actions                                    |
-| **xdg-desktop-portal-hyprland** | Enables screen sharing, portal integrations, and desktop environment interoperability       |
-| **hyprpolkitagent**            | GUI Polkit agent to handle authentication prompts (e.g. sudo password dialogs)               |
-| **qt5-wayland**, **qt6-wayland** | Ensures that Qt5/Qt6 applications run smoothly under Wayland                                |
-| **imv**                        | Lightweight, simple image viewer for quick previews                                          |
-| **catppuccin-gtk-theme**       | Clean and cohesive GTK theme for applications with GTK interfaces                            |
-| **swww**                       | Wallpaper daemon for setting and transitioning backgrounds dynamically                       |
-| **hyprshot** *(AUR)*           | Screenshot tool specifically designed for Wayland and Hyprland                               |
-| **ags-hyprpanel-git** *(AUR)*  | Fully customizable status bar (panel) for Hyprland                                           |
-| **zsh + Oh My Zsh**            | Modern shell with plugins, theme management, command autosuggestions, and productivity tweaks |
+| Component                         | Description                                                                                      |
+|-----------------------------------|--------------------------------------------------------------------------------------------------|
+| **uwsm**                          | Wayland session manager required by Hyprland                                                     |
+| **nerd-fonts**                    | Icon-rich fonts (Font Awesome, Nerd icons) for panels, prompts, and terminals                    |
+| **rofi**                          | Fast, highly customizable application launcher                                                   |
+| **antimicrox**                    | Map game controller buttons to keyboard and mouse actions                                        |
+| **xdg-desktop-portal-hyprland**   | Enables screen sharing, portal integrations, and desktop environment interoperability            |
+| **hyprpolkitagent**               | GUI Polkit agent to handle authentication prompts (e.g. sudo password dialogs)                   |
+| **wireplumber**                   | PipeWire session and policy manager for audio                                                    |
+| **qt5-wayland**, **qt6-wayland**  | Ensures that Qt5/Qt6 applications run smoothly under Wayland                                     |
+| **imv**                           | Lightweight, simple image viewer for quick previews                                              |
+| **swww**                          | Wallpaper daemon for setting and transitioning backgrounds dynamically                           |
+| **hyprshot**                      | Screenshot tool specifically designed for Wayland and Hyprland                                   |
+| **cliphist**                      | Clipboard manager for Wayland                                                                    |
+| **kitty**                         | GPU-accelerated terminal emulator                                                                |
+| **dolphin**                       | KDE file manager                                                                                 |
+| **nvim + vim**                    | Editors pre-configured with **vim-plug** and symlinked configs                                   |
+| **zsh + Oh My Zsh**               | Modern shell with plugins (autosuggestions, themes, etc.)                                        |
+| **sddm**                          | Display/login manager, themed via custom configs                                                 |
+| **grub-themes**                   | Custom GRUB theme installer included                                                             |
+| **spotify-launcher**              | Lightweight Spotify launcher                                                                     |
+| **hyprcursor**                    | Cursor theme support for Hyprland                                                                |
+| **hyprpicker**                    | Wayland-compatible color picker                                                                  |
+| **ags-hyprpanel-git** *(AUR)*     | Fully customizable status bar (panel) for Hyprland                                               |
+| **sddm-silent-theme** *(AUR)*     | Minimal SDDM theme for a clean login experience                                                  |
+| **phinger-cursors** *(AUR)*       | High-quality cursor theme                                                                        |
+| **aylurs-gtk-shell-git** *(AUR)*  | Shell environment framework used by Hyprpanel                                                    |
+| **wf-recorder-git** *(AUR)*       | Screen recording tool for Wayland                                                                |
+| **matugen-bin** *(AUR)*           | Dynamic material-based color scheme generator                                                    |
+| **python-gpustat** *(AUR)*        | GPU monitoring tool for terminals                                                                |
+| **zen-browser-bin** *(AUR)*       | Web browser                                                                      |
+| **brave-bin** *(AUR)*             | Chromium-based web browser with privacy enhancements                                             |
+| **go + gopls**                    | Go language support and LSP server installed via `go install`                                    |
+| **Extras**                        | Utilities like `curl`, `tree`, `btop`, `bluez`, `gvfs`, `ntfs-3g`, `wl-clipboard`, etc. for usability |
 
-## ✅ Requirements
-- Arch Linux or Arch-based distro
-- `yay` installed
-- Hyprland config files under ~/.config/hypr/
+---
+
+In addition to packages, the installer also: 
+- Creates **symlinks** for all configs in `~/.config`, `~/.zshrc`, `~/.vim`, `nvim`, cursors, etc.
+- Installs **vim-plug** for both Vim and Neovim.
+- Automatically configures **Oh My Zsh** with `zsh-autosuggestions`.
+- Runs the **GRUB theme installer** if available.
