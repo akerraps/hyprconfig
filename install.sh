@@ -78,7 +78,8 @@ sudo pacman -S --needed --noconfirm \
   curl cliphist sddm hyprcursor spotify-launcher gtksourceview3 \
   libgtop bluez bluez-utils btop networkmanager hyprpicker \
   kitty zsh curl nvim dolphin go xclip wl-clipboard less tree \
-  grub ntfs-3g python upower pacman-contrib gvfs wl-clipboard 
+  grub ntfs-3g python upower pacman-contrib gvfs wl-clipboard \
+  blueberry pavucontrol
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -96,7 +97,8 @@ echo "Installing AUR packages with yay..."
 yay -S --needed --noconfirm \
   ags-hyprpanel-git sddm-silent-theme phinger-cursors \
   aylurs-gtk-shell-git wf-recorder-git matugen-bin python-gpustat \
-  zen-browser-bin brave-bin catppuccin-gtk-theme-frappe
+  zen-browser-bin brave-bin catppuccin-gtk-theme-frappe \
+  cura-bin
 
 # === Oh My Zsh Setup ===
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
