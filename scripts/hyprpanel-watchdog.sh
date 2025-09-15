@@ -1,52 +1,18 @@
 #!/bin/bash
+set +e
 
-# Watchdog script to monitor and restart hyprpanel and swww-daemon when HDMI is connected
-# Useful when HDMI is unplugged/replugged and hyprpanel crashes
+# Mata hyprpanel y scripts relacionados
+pkill -f hyprpanel-app
+pkill -f bluetooth.py
 
-export WAYLAND_DISPLAY=wayland-1
-export XDG_SESSION_TYPE=wayland
-export XDG_SESSION_DESKTOP=Hyprland
+# Busca el PID de gjs que tiene abierto el socket hyprpanel
+pid=$(lsof -u $USER -nP | grep 'hyprpanel.sock' | awk '{print $2}' | sort -u)
 
-LOGFILE="/tmp/hyprpanel-watchdog.log"
+if [ -n "$pid" ]; then
+    echo "[+] Killing gjs PID(s): $pid"
+    kill -9 $pid
+fi
 
-echo "[INFO] Starting hyprpanel watchdog..." | tee -a "$LOGFILE"
+# Relanza hyprpanel
+nohup hyprpanel >/dev/null 2>&1 &
 
-while true; do
-    # Check if an HDMI monitor is connected
-    if hyprctl monitors | grep -q "HDMI"; then
-        # Check if hyprpanel is running
-        if ! pgrep -f "hyprpanel.js" > /dev/null; then
-            echo "$(date) [WARN] hyprpanel is not running. Restarting..." | tee -a "$LOGFILE"
-
-            # Kill SwayNotificationCenter if stuck
-            pkill -f swaync
-            pkill -f SwayNotificationCenter
-            sleep 1
-
-            # Restart swww-daemon only if the socket exists
-            SOCKET_PATH="$XDG_RUNTIME_DIR/swww-${WAYLAND_DISPLAY}.socket"
-            if [ -S "$SOCKET_PATH" ]; then
-                echo "$(date) [INFO] Killing swww-daemon..." | tee -a "$LOGFILE"
-                pkill swww-daemon
-                sleep 1
-            fi
-
-            if ! pgrep -x swww-daemon > /dev/null; then
-                echo "$(date) [INFO] Starting swww-daemon..." | tee -a "$LOGFILE"
-                swww-daemon & disown
-            else
-                echo "$(date) [WARN] swww-daemon already running. Skipping launch." | tee -a "$LOGFILE"
-            fi
-
-            echo "$(date) [INFO] Launching hyprpanel..." | tee -a "$LOGFILE"
-            sleep 2
-            hyprpanel & disown
-
-            echo "$(date) [SUCCESS] hyprpanel and swww-daemon restarted." | tee -a "$LOGFILE"
-        fi
-    else
-        echo "$(date) [INFO] No HDMI monitor detected. Skipping check." | tee -a "$LOGFILE"
-    fi
-
-    sleep 5
-done
