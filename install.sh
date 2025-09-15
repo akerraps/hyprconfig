@@ -79,7 +79,7 @@ sudo pacman -S --needed --noconfirm \
   libgtop bluez bluez-utils btop networkmanager hyprpicker \
   kitty zsh curl nvim dolphin go xclip wl-clipboard less tree \
   grub ntfs-3g python upower pacman-contrib gvfs wl-clipboard \
-  blueberry pavucontrol
+  blueberry pavucontrol fastfetch
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
