@@ -41,7 +41,6 @@ echo "Creating config symlinks..."
 declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/hyprpanel"]="$TARGET_CONFIG/hyprpanel"
   ["$CONFIG_CLONE_PATH/kitty/kitty.conf"]="$TARGET_CONFIG/kitty/kitty.conf"
-  ["$CONFIG_CLONE_PATH/kitty/kitty-themes/"]="$TARGET_CONFIG/kitty/kitty-themes"
   ["$TARGET_CONFIG/kitty/kitty-themes/themes/Desert.conf"]="$TARGET_CONFIG/kitty/theme.conf"
   ["$CONFIG_CLONE_PATH/rofi"]="$TARGET_CONFIG/rofi"
   ["$CONFIG_CLONE_PATH/zsh/.zshrc"]="$HOME/.zshrc"
