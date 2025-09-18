@@ -59,9 +59,9 @@ for src in "${!SYMLINKS[@]}"; do
   dest="${SYMLINKS[$src]}"
   if [ "$dest" = "/etc/sddm.conf" ]; then
     echo "Creating symlink with sudo: $src → $dest"
-    sudo ln -sf "$src" "$dest"
+    sudo ln -s "$src" "$dest"
   else
-    ln -sf "$src" "$dest"
+    ln -s "$src" "$dest"
     echo "Linked $src → $dest"
   fi
 done
