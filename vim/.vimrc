@@ -29,14 +29,6 @@ set incsearch             " Highlight matches while typing
 set hlsearch              " Highlight all matches of the search
 
 " ------------------------------
-" APPEARANCE
-" ------------------------------
-
-syntax on                 " Enable syntax highlighting
-set termguicolors         " Enable 24-bit RGB colors in terminal
-set background=dark       " Set background theme to dark
-
-" ------------------------------
 " USABILITY
 " ------------------------------
 
@@ -46,7 +38,6 @@ set wildmenu              " Enhanced command-line completion
 set cursorline            " Highlight the current line
 set showcmd               " Show incomplete commands
 set showmode              " Show current mode (normal/insert/visual/etc)
-highlight Normal ctermbg=NONE guibg=NONE
 
 " ------------------------------
 " CUSTOM KEYBINDINGS
@@ -177,7 +168,16 @@ call plug#begin()
 
 call plug#end()
 
+
+" ------------------------------
+" APPEARANCE
+" ------------------------------
+
+syntax on                 " Enable syntax highlighting
+set termguicolors         " Enable 24-bit RGB colors in terminal
+set background=dark       " Set background theme to dark
 colorscheme dracula
+highlight Normal ctermbg=NONE guibg=NONE
 
 " NERTree configurations
 " Start NERDTree and put the cursor back in the other window.
