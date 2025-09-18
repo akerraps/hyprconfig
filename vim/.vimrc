@@ -35,7 +35,6 @@ set hlsearch              " Highlight all matches of the search
 syntax on                 " Enable syntax highlighting
 set termguicolors         " Enable 24-bit RGB colors in terminal
 set background=dark       " Set background theme to dark
-colorscheme gruvbox
 
 " ------------------------------
 " USABILITY
@@ -174,7 +173,11 @@ call plug#begin()
     Plug 'charlespascoe/vim-go-syntax'
     Plug 'farmergreg/vim-lastplace'
     Plug 'airblade/vim-gitgutter'
+    Plug 'dracula/vim', {'name': 'dracula'}
+
 call plug#end()
+
+colorscheme dracula
 
 " NERTree configurations
 " Start NERDTree and put the cursor back in the other window.
