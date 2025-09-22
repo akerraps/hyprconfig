@@ -46,8 +46,7 @@ declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/zsh/.zshrc"]="$HOME/.zshrc"
   ["$CONFIG_CLONE_PATH/vim"]="$HOME/.vim"
   ["$CONFIG_CLONE_PATH/vim/.vimrc"]="$HOME/.vimrc"
-  ["$CONFIG_CLONE_PATH/vim/.vimrc"]="$TARGET_CONFIG/nvim/init.vim"
-  ["$CONFIG_CLONE_PATH/vim/colors"]="$TARGET_CONFIG/nvim/colors"
+  ["$CONFIG_CLONE_PATH/nvim"]="$TARGET_CONFIG/nvim"
   ["$CONFIG_CLONE_PATH/sddm/sddm.conf"]="/etc/sddm.conf"
   ["$CONFIG_CLONE_PATH/cursors/index.theme"]="$HOME/.icons/default/index.theme"
   ["$CONFIG_CLONE_PATH/cursors/settings.ini"]="$TARGET_CONFIG/gtk-3.0/settings.ini"
@@ -58,14 +57,21 @@ declare -A SYMLINKS=(
 for src in "${!SYMLINKS[@]}"; do
   dest="${SYMLINKS[$src]}"
   if [ "$dest" = "/etc/sddm.conf" ]; then
-    echo "Creating symlink with sudo: $src → $dest"
-    sudo ln -s "$src" "$dest"
+    if [ -e "$dest" ] || [ -L "$dest" ]; then
+      echo "Skipping existing (requires sudo): $dest"
+    else
+      echo "Creating symlink with sudo: $src → $dest"
+      sudo ln -s "$src" "$dest"
+    fi
   else
-    ln -s "$src" "$dest"
-    echo "Linked $src → $dest"
+    if [ -e "$dest" ] || [ -L "$dest" ]; then
+      echo "Skipping existing: $dest"
+    else
+      ln -s "$src" "$dest"
+      echo "Linked $src → $dest"
+    fi
   fi
 done
-
 
 # === Install Core Packages ===
 echo "Installing core packages..."
@@ -78,10 +84,10 @@ sudo pacman -S --needed --noconfirm \
   libgtop bluez bluez-utils btop networkmanager hyprpicker \
   kitty zsh curl nvim dolphin go xclip wl-clipboard less tree \
   grub ntfs-3g python upower pacman-contrib gvfs wl-clipboard \
-  blueberry pavucontrol fastfetch zed
+  blueberry pavucontrol fastfetch zed ripgrep fd lazygit
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -113,7 +119,7 @@ ln -sf $CONFIG_CLONE_PATH/zsh/.zshrc $HOME/.zshrc
 # === Run custom scripts ===
 if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
   echo "Running grub theme installer..."
-  cd $CONFIG_CLONE_PATH/grub-themes/ 
+  cd $CONFIG_CLONE_PATH/grub-themes/
   sudo bash "$CONFIG_CLONE_PATH/grub-themes/install.sh"
 fi
 
