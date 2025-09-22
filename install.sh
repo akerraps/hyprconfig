@@ -33,7 +33,6 @@ TARGET_CONFIG="$HOME/.config"
 mkdir -p "$TARGET_CONFIG"
 mkdir -p "$HOME/.icons/default"
 mkdir -p "$HOME/.config/gtk-3.0"
-mkdir -p "$HOME/.config/nvim"
 
 # === Symlinks ===
 echo "Creating config symlinks..."
