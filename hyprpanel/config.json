@@ -395,11 +395,11 @@
   "bar.launcher.autoDetectIcon": false,
   "theme.bar.buttons.dashboard.enableBorder": false,
   "theme.bar.buttons.workspaces.enableBorder": false,
-  "bar.workspaces.show_icons": true,
+  "bar.workspaces.show_icons": false,
   "bar.workspaces.show_numbered": false,
   "bar.workspaces.workspaceMask": false,
-  "bar.workspaces.showWsIcons": false,
-  "bar.workspaces.showApplicationIcons": false,
+  "bar.workspaces.showWsIcons": true,
+  "bar.workspaces.showApplicationIcons": true,
   "bar.workspaces.numbered_active_indicator": "color",
   "bar.workspaces.reverse_scroll": true,
   "bar.windowtitle.custom_title": true,
@@ -482,5 +482,7 @@
   "menus.dashboard.directories.right.directory1.command": "bash -c \"nautilus $HOME/Documents/\"",
   "menus.dashboard.directories.right.directory2.command": "bash -c \"nautilus $HOME/Pictures/\"",
   "menus.dashboard.directories.right.directory3.command": "bash -c \"nautilus $HOME/\"",
-  "theme.bar.buttons.modules.updates.enableBorder": false
+  "theme.bar.buttons.modules.updates.enableBorder": false,
+  "bar.workspaces.applicationIconFallback": "",
+  "bar.workspaces.ignored": "98"
 }
