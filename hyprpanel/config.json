@@ -484,5 +484,8 @@
   "menus.dashboard.directories.right.directory3.command": "bash -c \"nautilus $HOME/\"",
   "theme.bar.buttons.modules.updates.enableBorder": false,
   "bar.workspaces.applicationIconFallback": "",
-  "bar.workspaces.ignored": "98"
+  "bar.workspaces.ignored": "98",
+  "bar.systray.ignore": [
+    "nm-applet"
+  ]
 }
