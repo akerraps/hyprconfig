@@ -420,6 +420,7 @@
         "systray"
       ],
       "middle": [
+        "media",
         "workspaces"
       ],
       "right": [
@@ -487,5 +488,9 @@
   "bar.workspaces.ignored": "98",
   "bar.systray.ignore": [
     "nm-applet"
-  ]
+  ],
+  "menus.media.hideAuthor": false,
+  "menus.media.displayTimeTooltip": false,
+  "bar.media.format": "{title} - {artist}",
+  "bar.media.truncation_size": 15
 }
