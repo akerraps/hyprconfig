@@ -83,7 +83,7 @@ sudo pacman -S --needed --noconfirm \
   libgtop bluez bluez-utils btop networkmanager hyprpicker \
   kitty zsh curl nvim dolphin go xclip wl-clipboard less tree \
   grub ntfs-3g python upower pacman-contrib gvfs wl-clipboard \
-  blueberry pavucontrol fastfetch zed ripgrep fd lazygit
+  blueberry pavucontrol fastfetch zed ripgrep fd lazygit reflector
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -123,5 +123,7 @@ if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
 fi
 
 go install golang.org/x/tools/gopls@latest
+
+sudo systemctl enable reflector
 
 echo "Hyprland rice installation completed!"
