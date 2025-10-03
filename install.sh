@@ -46,11 +46,11 @@ declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/vim"]="$HOME/.vim"
   ["$CONFIG_CLONE_PATH/vim/.vimrc"]="$HOME/.vimrc"
   ["$CONFIG_CLONE_PATH/nvim"]="$TARGET_CONFIG/nvim"
-  ["$CONFIG_CLONE_PATH/sddm/sddm.conf"]="/etc/sddm.conf"
   ["$CONFIG_CLONE_PATH/cursors/index.theme"]="$HOME/.icons/default/index.theme"
   ["$CONFIG_CLONE_PATH/cursors/settings.ini"]="$TARGET_CONFIG/gtk-3.0/settings.ini"
   ["$CONFIG_CLONE_PATH/config/"]="$TARGET_CONFIG/hypr/"
   ["$CONFIG_CLONE_PATH/hyprland.conf"]="$TARGET_CONFIG/hypr/hyprland.conf"
+  ["$CONFIG_CLONE_PATH/sddm/sddm.conf"]="/etc/sddm.conf"
 )
 
 for src in "${!SYMLINKS[@]}"; do
@@ -74,6 +74,8 @@ done
 
 # === Install Core Packages ===
 echo "Installing core packages..."
+
+sudo pacman -Syu
 
 sudo pacman -S --needed --noconfirm \
   hyprshot uwsm nerd-fonts rofi antimicrox \
