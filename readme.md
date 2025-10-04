@@ -7,7 +7,7 @@ This setup is still **a work in progress**, so some parts are unfinished or not 
 
 ## 🎨 Screenshots
 
-![My first rice 2](resources/My_first_rice_4.png)
+![My first rice 2](resources/My_first_rice_6.png)
 
 ![My first rice 4](resources/My_first_rice_2.png)
 
@@ -22,12 +22,13 @@ This setup is still **a work in progress**, so some parts are unfinished or not 
 - **Neovim** — Main editor, configured with shared Vim/Neovim settings, plugins, and themes via vim-plug.
 - **SDDM** — Display/login manager with a minimal silent theme and custom configuration.
 - **GRUB** — Customized bootloader with themed setup from the repo.
+
 ---
 
 ## ⚙️ Full Installation Guide
 
 This guide installs all the essential packages and creates the necessary config symlinks to replicate this rice.
-It’s intended for **Arch Linux** or Arch-based distributions. 
+It’s intended for **Arch Linux** or Arch-based distributions.
 
 ---
 
@@ -76,7 +77,8 @@ git clone https://github.com/akerraps/hyprconfig.git ~/.config/hyprconfig && bas
 
 ---
 
-In addition to packages, the installer also: 
+In addition to packages, the installer also:
+
 - Creates **symlinks** for all configs in `~/.config`, `~/.zshrc`, `~/.vim`, `nvim`, cursors, etc.
 - Installs **vim-plug** for both Vim and Neovim.
 - Automatically configures **Oh My Zsh** with `zsh-autosuggestions`.

@@ -137,5 +137,3 @@ my-backward-kill-word () {
 }
 zle -N my-backward-kill-word
 bindkey '^w' my-backward-kill-word
-
-fastfetch

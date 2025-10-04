@@ -105,7 +105,7 @@ yay -S --needed --noconfirm \
   ags-hyprpanel-git sddm-silent-theme phinger-cursors \
   aylurs-gtk-shell-git wf-recorder-git matugen-bin python-gpustat \
   zen-browser-bin brave-bin catppuccin-gtk-theme-frappe \
-  cura-bin
+  cura-bin tty-clock
 
 # === Oh My Zsh Setup ===
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
