@@ -420,7 +420,6 @@
         "systray"
       ],
       "middle": [
-        "media",
         "workspaces"
       ],
       "right": [
@@ -491,6 +490,6 @@
   ],
   "menus.media.hideAuthor": false,
   "menus.media.displayTimeTooltip": false,
-  "bar.media.format": "{title} - {artist}",
-  "bar.media.truncation_size": 15
+  "bar.media.format": "{title}",
+  "bar.media.truncation_size": 10
 }
