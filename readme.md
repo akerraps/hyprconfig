@@ -5,15 +5,15 @@ This setup is still **a work in progress**, so some parts are unfinished or not 
 
 ---
 
-## 🎨 Screenshots
+## Screenshots
 
-![My first rice 2](resources/My_first_rice_6.png)
+![My first rice 7](resources/My_first_rice_6.png)
 
-![My first rice 4](resources/My_first_rice_2.png)
+![My first rice 7](resources/My_first_rice_7.png)
 
 ---
 
-## 🗂️ Current Setup
+## Current Setup
 
 - **Hyprpanel** — custom **Nord**-inspired theme with transparent blurred background and widgets for workspace, clock, and system info.
 - **Kitty Terminal** — fast, GPU-accelerated terminal emulator.
@@ -25,20 +25,20 @@ This setup is still **a work in progress**, so some parts are unfinished or not 
 
 ---
 
-## ⚙️ Full Installation Guide
+## Full Installation Guide
 
 This guide installs all the essential packages and creates the necessary config symlinks to replicate this rice.
 It’s intended for **Arch Linux** or Arch-based distributions.
 
 ---
 
-## 🚀 Quick Setup (Copy & Paste)
+## Quick Setup (Copy & Paste)
 
 ```bash
 git clone https://github.com/akerraps/hyprconfig.git ~/.config/hyprconfig && bash ~/.config/hyprconfig/install.sh
 ```
 
-### 📦 What’s Included
+### What’s Included
 
 | Component                         | Description                                                                                      |
 |-----------------------------------|--------------------------------------------------------------------------------------------------|
