@@ -414,19 +414,19 @@
       "left": [
         "clock",
         "separator",
-        "ram",
-        "cpu",
-        "separator",
         "systray"
       ],
       "middle": [
-        "workspaces"
+        "notifications",
+        "separator",
+        "workspaces",
+        "separator",
+        "bluetooth"
       ],
       "right": [
         "volume",
+        "separator",
         "network",
-        "bluetooth",
-        "notifications",
         "separator",
         "dashboard"
       ]
@@ -491,5 +491,12 @@
   "menus.media.hideAuthor": false,
   "menus.media.displayTimeTooltip": false,
   "bar.media.format": "{title}",
-  "bar.media.truncation_size": 10
+  "bar.media.truncation_size": 10,
+  "theme.bar.menus.card_radius": "0.4em",
+  "theme.bar.menus.border.radius": "0.7em",
+  "theme.bar.menus.popover.radius": "0.4em",
+  "theme.bar.menus.buttons.radius": "0.4em",
+  "theme.bar.menus.tooltip.radius": "0.3em",
+  "theme.font.name": "Ubuntu Nerd Font",
+  "theme.font.label": "JetBrainsMono Nerd Font Ultra-Bold"
 }
