@@ -1,85 +1,106 @@
-# 🌿 My First Hyprland Rice
+# Hyprland Rice Setup
 
-Welcome to my very first **rice** using **Hyprland** — a dynamic and highly customizable Wayland compositor.
-This setup is still **a work in progress**, so some parts are unfinished or not fully configured yet.
+This repository contains my personal **Hyprland rice** for Arch Linux.  
+The configuration is based on the **Tokyo Night** color theme, applied consistently across **Neovim**, **hyprpanel** and the **Kitty terminal**, aiming for a cohesive and visually calm environment.
+
+> Note: The Neovim configuration included here is **in development** and not yet finalized. It’s adapted to my personal workflow and based on [lazyVim](https://www.lazyvim.org/) and will continue to evolve over time.
+
+---
+
+## Overview
+
+This setup provides a complete and reproducible Hyprland environment with a focus on aesthetics, performance, and customization.  
+It automates package installation, configuration linking, and theming through a single installation script.
 
 ---
 
 ## Screenshots
 
-![My first rice 7](resources/My_first_rice_6.png)
-
-![My first rice 7](resources/My_first_rice_7.png)
-
----
-
-## Current Setup
-
-- **Hyprpanel** — custom **Nord**-inspired theme with transparent blurred background and widgets for workspace, clock, and system info.
-- **Kitty Terminal** — fast, GPU-accelerated terminal emulator.
-- **Rofi** — lightweight and highly configurable application launcher.
-- **zsh** — my default shell, powered by **Oh My Zsh** with the `zsh-autosuggestions` plugin for command suggestions, aliases, and a custom prompt theme.
-- **Neovim** — Main editor, configured with shared Vim/Neovim settings, plugins, and themes via vim-plug.
-- **SDDM** — Display/login manager with a minimal silent theme and custom configuration.
-- **GRUB** — Customized bootloader with themed setup from the repo.
+![Tokyo Night Rice 6](resources/My_first_rice_6.png)
+![Tokyo Night Rice 7](resources/My_first_rice_7.png)
 
 ---
 
-## Full Installation Guide
+## Features
 
-This guide installs all the essential packages and creates the necessary config symlinks to replicate this rice.
-It’s intended for **Arch Linux** or Arch-based distributions.
+- **Tokyo Night Theme Integration** — consistent appearance across terminal, Neovim, and UI components.
+- **Hyprpanel** — custom setup with a transparent, blurred background and minimal widgets.
+- **Kitty Terminal** — GPU-accelerated terminal configured with the Tokyo Night theme and custom keybindings.
+- **Rofi** — minimal application launcher for quick and efficient workflows, with clipboad integration.
+- **Zsh with Oh My Zsh** — enhanced shell environment with autosuggestions and custom prompt.
+- **Neovim** — customized editor using vim-plug, currently a work in progress.
+- **SDDM + GRUB** — both themed for a clean, cohesive system experience.
 
 ---
 
-## Quick Setup (Copy & Paste)
+## Installation
+
+This rice is designed for **Arch Linux** and Arch-based distributions.  
+To install, simply run the following command:
 
 ```bash
 git clone https://github.com/akerraps/hyprconfig.git ~/.config/hyprconfig && bash ~/.config/hyprconfig/install.sh
 ```
 
-### What’s Included
+This script performs a complete setup:
 
-| Component                         | Description                                                                                      |
-|-----------------------------------|--------------------------------------------------------------------------------------------------|
-| **uwsm**                          | Wayland session manager required by Hyprland                                                     |
-| **nerd-fonts**                    | Icon-rich fonts (Font Awesome, Nerd icons) for panels, prompts, and terminals                    |
-| **rofi**                          | Fast, highly customizable application launcher                                                   |
-| **antimicrox**                    | Map game controller buttons to keyboard and mouse actions                                        |
-| **xdg-desktop-portal-hyprland**   | Enables screen sharing, portal integrations, and desktop environment interoperability            |
-| **hyprpolkitagent**               | GUI Polkit agent to handle authentication prompts (e.g. sudo password dialogs)                   |
-| **wireplumber**                   | PipeWire session and policy manager for audio                                                    |
-| **qt5-wayland**, **qt6-wayland**  | Ensures that Qt5/Qt6 applications run smoothly under Wayland                                     |
-| **imv**                           | Lightweight, simple image viewer for quick previews                                              |
-| **swww**                          | Wallpaper daemon for setting and transitioning backgrounds dynamically                           |
-| **hyprshot**                      | Screenshot tool specifically designed for Wayland and Hyprland                                   |
-| **cliphist**                      | Clipboard manager for Wayland                                                                    |
-| **kitty**                         | GPU-accelerated terminal emulator                                                                |
-| **dolphin**                       | KDE file manager                                                                                 |
-| **nvim + vim**                    | Editors pre-configured with **vim-plug** and symlinked configs                                   |
-| **zsh + Oh My Zsh**               | Modern shell with plugins (autosuggestions, themes, etc.)                                        |
-| **sddm**                          | Display/login manager, themed via custom configs                                                 |
-| **grub-themes**                   | Custom GRUB theme installer included                                                             |
-| **spotify-launcher**              | Lightweight Spotify launcher                                                                     |
-| **hyprcursor**                    | Cursor theme support for Hyprland                                                                |
-| **hyprpicker**                    | Wayland-compatible color picker                                                                  |
-| **ags-hyprpanel-git** *(AUR)*     | Fully customizable status bar (panel) for Hyprland                                               |
-| **sddm-silent-theme** *(AUR)*     | Minimal SDDM theme for a clean login experience                                                  |
-| **phinger-cursors** *(AUR)*       | High-quality cursor theme                                                                        |
-| **aylurs-gtk-shell-git** *(AUR)*  | Shell environment framework used by Hyprpanel                                                    |
-| **wf-recorder-git** *(AUR)*       | Screen recording tool for Wayland                                                                |
-| **matugen-bin** *(AUR)*           | Dynamic material-based color scheme generator                                                    |
-| **python-gpustat** *(AUR)*        | GPU monitoring tool for terminals                                                                |
-| **zen-browser-bin** *(AUR)*       | Web browser                                                                      |
-| **brave-bin** *(AUR)*             | Chromium-based web browser with privacy enhancements                                             |
-| **go + gopls**                    | Go language support and LSP server installed via `go install`                                    |
-| **Extras**                        | Utilities like `curl`, `tree`, `btop`, `bluez`, `gvfs`, `ntfs-3g`, `wl-clipboard`, etc. for usability |
+- Installs all required **core and AUR packages**.  
+- Creates **symlinks** for configuration files in appropriate directories.  
+- Installs **vim-plug** for both Vim.  
+- Sets up **Oh My Zsh** with `zsh-autosuggestions`.  
+- Runs optional **GRUB theme installation** if available.  
 
 ---
 
-In addition to packages, the installer also:
+## Package Overview
 
-- Creates **symlinks** for all configs in `~/.config`, `~/.zshrc`, `~/.vim`, `nvim`, cursors, etc.
-- Installs **vim-plug** for both Vim and Neovim.
-- Automatically configures **Oh My Zsh** with `zsh-autosuggestions`.
-- Runs the **GRUB theme installer** if available.
+| Component                         | Description                                                                                      |
+|-----------------------------------|--------------------------------------------------------------------------------------------------|
+| **Hyprland + Hyprpanel**          | Main compositor and customizable panel environment                                               |
+| **uwsm**                          | Wayland session manager                                                                          |
+| **nerd-fonts**                    | Icon-rich font set for terminal, status bars, and prompts                                        |
+| **rofi**                          | Lightweight launcher and application menu                                                        |
+| **antimicrox**                    | Controller-to-keyboard mapping utility                                                           |
+| **xdg-desktop-portal-hyprland**   | Portal integration for screen sharing and compatibility                                          |
+| **wireplumber + PipeWire**        | Modern audio management stack                                                                    |
+| **qt5/qt6-wayland**               | Wayland compatibility for Qt applications                                                        |
+| **imv**                           | Lightweight image viewer                                                                         |
+| **swww**                          | Wallpaper daemon supporting smooth transitions                                                   |
+| **hyprshot**                      | Wayland screenshot tool                                                                          |
+| **cliphist**                      | Clipboard manager for Wayland                                                                    |
+| **kitty**                         | Terminal emulator themed with Tokyo Night                                                        |
+| **dolphin**                       | KDE file manager                                                                                 |
+| **nvim / vim**                    | Editors with shared configuration and plugin management via vim-plug                             |
+| **zsh + Oh My Zsh**               | Default shell with plugins and enhanced usability                                                |
+| **sddm**                          | Display/login manager with silent theme                                                          |
+| **grub-themes**                   | Themed bootloader customization                                                                  |
+| **spotify-launcher**              | Lightweight launcher for Spotify                                                                 |
+| **hyprcursor / phinger-cursors**  | Cursor theme support for Wayland                                                                 |
+| **hyprpicker**                    | Wayland color picker utility                                                                     |
+| **AUR Packages**                  | Includes `ags-hyprpanel-git`, `sddm-silent-theme`, `aylurs-gtk-shell-git`, `matugen-bin`, `zen-browser-bin`, among others |
+| **Extras**                        | Essential utilities (`curl`, `btop`, `tree`, `wl-clipboard`, `bluez`, `gvfs`, `reflector`, etc.) |
+
+---
+
+## Configuration Notes
+
+- All configuration files are managed through **symlinks** from `~/.config/hyprconfig`.  
+- The **Tokyo Night** color palette is applied across:  
+  - **Kitty Terminal** (`tokyonight_moon.conf`)  
+  - **Neovim** (customized Lua configuration, work in progress)  
+- **Oh My Zsh** is automatically configured with the `zsh-autosuggestions` plugin.  
+- **Reflector** is enabled to maintain an optimized mirror list.  
+
+---
+
+## Development Status
+
+The setup is **functional and stable** for daily use, but the **Neovim configuration is under active development**.  
+Future updates will include refined LSP integration, improved keybindings, and a more modular plugin structure.
+
+---
+
+## License
+
+This project is open for personal use and adaptation.  
+Attribution is appreciated if you reuse or modify parts of this configuration.
