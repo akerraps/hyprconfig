@@ -1,7 +1,7 @@
 # Hyprland Rice Setup
 
 This repository contains my personal **Hyprland rice** for Arch Linux.  
-The configuration is based on the **Tokyo Night** color theme, applied consistently across **Neovim**, **hyprpanel** and the **Kitty terminal**, aiming for a cohesive and visually calm environment.
+The setup combines the **Tokyo Night** color theme across **Neovim** and the **Kitty terminal**, with a **Nord-inspired Hyprpanel** palette modified to blend seamlessly with the overall aesthetic.
 
 > Note: The Neovim configuration included here is **in development** and not yet finalized. It’s adapted to my personal workflow and based on [lazyVim](https://www.lazyvim.org/) and will continue to evolve over time.
 
@@ -23,10 +23,10 @@ It automates package installation, configuration linking, and theming through a 
 
 ## Features
 
-- **Tokyo Night Theme Integration** — consistent appearance across terminal, Neovim, and UI components.
-- **Hyprpanel** — custom setup with a transparent, blurred background and minimal widgets.
-- **Kitty Terminal** — GPU-accelerated terminal configured with the Tokyo Night theme and custom keybindings.
-- **Rofi** — minimal application launcher for quick and efficient workflows, with clipboad integration.
+- **Tokyo Night Theme Integration** — consistent Tokyo Night palette applied to terminal, Neovim, and UI components.
+- **Hyprpanel (Nord-based)** — customized Nord theme adjusted to visually match the Tokyo Night environment, featuring minimal widgets.
+- **Kitty Terminal** — GPU-accelerated terminal using the Tokyo Night color scheme.
+- **Rofi** — minimal application launcher with transparency and dark theme matching the rest of the setup.
 - **Zsh with Oh My Zsh** — enhanced shell environment with autosuggestions and custom prompt.
 - **Neovim** — customized editor using vim-plug, currently a work in progress.
 - **SDDM + GRUB** — both themed for a clean, cohesive system experience.
@@ -85,11 +85,11 @@ This script performs a complete setup:
 ## Configuration Notes
 
 - All configuration files are managed through **symlinks** from `~/.config/hyprconfig`.  
-- The **Tokyo Night** color palette is applied across:  
-  - **Kitty Terminal** (`tokyonight_moon.conf`)  
-  - **Neovim** (customized Lua configuration, work in progress)  
+- The visual design follows a **Tokyo Night color scheme**, while the **Hyprpanel** retains a **Nord base palette** that was manually tuned for harmony with the rest of the system.  
+- **Kitty Terminal** uses `tokyonight_moon.conf` for accurate color integration.  
+- **Neovim** uses a custom configuration (in development) built around the Tokyo Night palette.  
 - **Oh My Zsh** is automatically configured with the `zsh-autosuggestions` plugin.  
-- **Reflector** is enabled to maintain an optimized mirror list.  
+- **Reflector** is enabled to maintain an optimized mirror list.
 
 ---
 
