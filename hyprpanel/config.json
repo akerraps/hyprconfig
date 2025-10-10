@@ -498,5 +498,6 @@
   "theme.bar.menus.buttons.radius": "0.4em",
   "theme.bar.menus.tooltip.radius": "0.3em",
   "theme.font.name": "Ubuntu Nerd Font",
-  "theme.font.label": "JetBrainsMono Nerd Font Ultra-Bold"
+  "theme.font.label": "JetBrainsMono Nerd Font Ultra-Bold",
+  "bar.workspaces.applicationIconEmptyWorkspace": ""
 }
