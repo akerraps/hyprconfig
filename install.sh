@@ -40,6 +40,7 @@ echo "Creating config symlinks..."
 declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/hyprpanel"]="$TARGET_CONFIG/hyprpanel"
   ["$CONFIG_CLONE_PATH/kitty/kitty.conf"]="$TARGET_CONFIG/kitty/kitty.conf"
+  ["$CONFIG_CLONE_PATH/yazi"]="$TARGET_CONFIG/yazi"
   ["$CONFIG_CLONE_PATH/kitty/kitty-themes/tokyonight_moon.conf"]="$TARGET_CONFIG/kitty/theme.conf"
   ["$CONFIG_CLONE_PATH/rofi"]="$TARGET_CONFIG/rofi"
   ["$CONFIG_CLONE_PATH/zsh/.zshrc"]="$HOME/.zshrc"
@@ -86,7 +87,8 @@ sudo pacman -S --needed --noconfirm \
   kitty zsh curl nvim dolphin go xclip wl-clipboard less tree \
   grub ntfs-3g python upower pacman-contrib gvfs wl-clipboard \
   blueberry pavucontrol fastfetch zed ripgrep fd lazygit reflector \
-  vlc socat
+  vlc socat yazi ffmpeg 7zip jq poppler zoxide resvg imagemagick \
+  ouch
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -95,7 +97,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 vim +PlugInstall +qall
-nvim +PlugInstall +qall
 
 # === AUR Packages ===
 echo "Installing AUR packages with yay..."
