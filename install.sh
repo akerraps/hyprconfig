@@ -41,6 +41,7 @@ declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/hyprpanel"]="$TARGET_CONFIG/hyprpanel"
   ["$CONFIG_CLONE_PATH/kitty/kitty.conf"]="$TARGET_CONFIG/kitty/kitty.conf"
   ["$CONFIG_CLONE_PATH/yazi"]="$TARGET_CONFIG/yazi"
+  ["$CONFIG_CLONE_PATH/walker"]="$TARGET_CONFIG/walker"
   ["$CONFIG_CLONE_PATH/kitty/kitty-themes/tokyonight_moon.conf"]="$TARGET_CONFIG/kitty/theme.conf"
   ["$CONFIG_CLONE_PATH/rofi"]="$TARGET_CONFIG/rofi"
   ["$CONFIG_CLONE_PATH/zsh/.zshrc"]="$HOME/.zshrc"
@@ -102,11 +103,15 @@ vim +PlugInstall +qall
 echo "Installing AUR packages with yay..."
 
 # IMPORTANT: Run yay as your normal user (no sudo)
+yay -Syu
+
 yay -S --needed --noconfirm \
   ags-hyprpanel-git sddm-silent-theme phinger-cursors \
   aylurs-gtk-shell-git wf-recorder-git matugen-bin python-gpustat \
   zen-browser-bin brave-bin catppuccin-gtk-theme-frappe \
-  cura-bin tty-clock
+  cura-bin tty-clock walker-bin elephant elephant-desktopapplications \
+  elephant-calc elephant-runner elephant-files elephant-providerlist elephant-websearch elephant-clipboard \
+  elephant-symbols elephant-unicode elephant-emojis
 
 # === Oh My Zsh Setup ===
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -127,6 +132,8 @@ if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
 fi
 
 go install golang.org/x/tools/gopls@latest
+
+elephant service enable
 
 sudo systemctl enable reflector
 
