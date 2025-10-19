@@ -502,5 +502,6 @@
   "bar.workspaces.applicationIconEmptyWorkspace": "",
   "bar.workspaces.applicationIconMap": {
     "class:UltiMaker-Cura": "󰹛"
-  }
+  },
+  "menus.dashboard.powermenu.avatar.image": "~/.config/hyprconfig/resources/akerraps.jpg"
 }
