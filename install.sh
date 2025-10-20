@@ -53,20 +53,37 @@ declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/config/"]="$TARGET_CONFIG/hypr/"
   ["$CONFIG_CLONE_PATH/hyprland.conf"]="$TARGET_CONFIG/hypr/hyprland.conf"
   ["$CONFIG_CLONE_PATH/sddm/sddm.conf"]="/etc/sddm.conf"
+  ["$CONFIG_CLONE_PATH/resources/akerraps.jpg"]="/usr/share/sddm/faces/akerraps.face.icon"
 )
+
+SUDO_PATHS=(
+  "/etc/sddm.conf"
+  "/usr/share/sddm/faces/akerraps.face.icon"
+)
+
+requires_sudo() {
+  local path="$1"
+  for sudo_path in "${SUDO_PATHS[@]}"; do
+    if [[ "$path" == "$sudo_path" ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
 
 for src in "${!SYMLINKS[@]}"; do
   dest="${SYMLINKS[$src]}"
-  if [ "$dest" = "/etc/sddm.conf" ]; then
+
+  if requires_sudo "$dest"; then
     if [ -e "$dest" ] || [ -L "$dest" ]; then
-      echo "Skipping existing (requires sudo): $dest"
+      echo "Skipping existing (requires sudo): $src → $dest"
     else
       echo "Creating symlink with sudo: $src → $dest"
       sudo ln -s "$src" "$dest"
     fi
   else
     if [ -e "$dest" ] || [ -L "$dest" ]; then
-      echo "Skipping existing: $dest"
+      echo "Skipping existing: $src → $dest"
     else
       ln -s "$src" "$dest"
       echo "Linked $src → $dest"
@@ -131,12 +148,11 @@ if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
   sudo bash "$CONFIG_CLONE_PATH/grub-themes/install.sh"
 fi
 
-sudo cp ~/.config/hyprconfig/resources/akerraps.jpg /usr/share/sddm/faces/akerraps.face.icon
-
+echo "Installing golang..."
 go install golang.org/x/tools/gopls@latest
 
+echo "Enabling daemon services..."
 elephant service enable
-
 sudo systemctl enable reflector
 
 echo "Hyprland rice installation completed!"
