@@ -131,6 +131,8 @@ if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
   sudo bash "$CONFIG_CLONE_PATH/grub-themes/install.sh"
 fi
 
+sudo cp ~/.config/hyprconfig/resources/akerraps.jpg /usr/share/sddm/faces/akerraps.face.icon
+
 go install golang.org/x/tools/gopls@latest
 
 elephant service enable
