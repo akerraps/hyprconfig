@@ -106,7 +106,7 @@ sudo pacman -S --needed --noconfirm \
   grub ntfs-3g python upower pacman-contrib gvfs wl-clipboard \
   blueberry pavucontrol fastfetch zed ripgrep fd lazygit reflector \
   vlc socat yazi ffmpeg 7zip jq poppler zoxide resvg imagemagick \
-  ouch
+  ouch man
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
