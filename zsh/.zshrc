@@ -73,7 +73,6 @@ ENABLE_CORRECTION="true"
 plugins=(
   git
   dotenv
-  z
   sudo
   zsh-autosuggestions
 )
@@ -146,3 +145,5 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+eval "$(zoxide init zsh)"
