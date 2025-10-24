@@ -53,12 +53,10 @@ declare -A SYMLINKS=(
   ["$CONFIG_CLONE_PATH/config/"]="$TARGET_CONFIG/hypr/"
   ["$CONFIG_CLONE_PATH/hyprland.conf"]="$TARGET_CONFIG/hypr/hyprland.conf"
   ["$CONFIG_CLONE_PATH/sddm/sddm.conf"]="/etc/sddm.conf"
-  ["$CONFIG_CLONE_PATH/resources/akerraps.jpg"]="/usr/share/sddm/faces/akerraps.face.icon"
 )
 
 SUDO_PATHS=(
   "/etc/sddm.conf"
-  "/usr/share/sddm/faces/akerraps.face.icon"
 )
 
 requires_sudo() {
@@ -147,6 +145,8 @@ if [ -f "$CONFIG_CLONE_PATH/grub-themes/install.sh" ]; then
   cd $CONFIG_CLONE_PATH/grub-themes/
   sudo bash "$CONFIG_CLONE_PATH/grub-themes/install.sh"
 fi
+
+sudo cp $CONFIG_CLONE_PATH/resources/akerraps.jpg /usr/share/sddm/faces/akerraps.face.icon
 
 echo "Installing golang..."
 go install golang.org/x/tools/gopls@latest
