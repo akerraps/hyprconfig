@@ -146,6 +146,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# Load zoxide
 eval "$(zoxide init zsh)"
 
 # FZF
