@@ -8,5 +8,10 @@ use = "uhs-robert/sshfs"
 rev = "2728b14"
 hash = "8ee736ae855ed80ae341136bb8fb353c"
 
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "8f37dc5"
+hash = "ee71543790f0ce3951161045a3787abd"
+
 [flavor]
 deps = []

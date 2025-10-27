@@ -68,6 +68,10 @@ prepend_keymap = [
     #   -> { on = [ "m", "a" ], run = [ "plugin yamb -- save", "plugin gvfs -- automount-when-cd" ], desc = "Add bookmark and enable automount when cd"}
     { on = [ "M", "t" ], run = "plugin gvfs -- automount-when-cd", desc = "Enable automount when cd to device under cwd" },
     { on = [ "M", "T" ], run = "plugin gvfs -- automount-when-cd --disabled", desc = "Disable automount when cd to device under cwd" },
+    
+    # SSHFS
+    { on = ["M","s"], run = "plugin sshfs -- menu",            desc = "Open SSHFS options" },
 
-    { on = ["M","s"], run = "plugin sshfs -- menu",            desc = "Open SSHFS options" }
+    # lazigit
+    {on   = [ "g", "i" ], run  = "plugin lazygit", desc = "run lazygit"},
 ]
