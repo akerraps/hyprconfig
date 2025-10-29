@@ -46,3 +46,6 @@ require("gvfs"):setup({
 	-- root_mountpoint = (os.getenv("XDG_RUNTIME_DIR") or ("/run/user/" .. ya.uid())) .. "/gvfs"
 })
 require("sshfs"):setup()
+
+--relative-motions
+require("relative-motions"):setup({ show_numbers = "relative", show_motion = true, enter_mode = "first" })
