@@ -125,6 +125,7 @@ alias ...="cd ../.."
 alias yay=yay --aur
 alias vim="nvim"
 alias txt="nvim ~/Desktop/txt"
+alias s="kitten ssh"
 
 bindkey \^U backward-kill-line
 
