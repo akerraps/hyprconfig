@@ -126,7 +126,7 @@ yay -S --needed --noconfirm \
   zen-browser-bin brave-bin catppuccin-gtk-theme-frappe \
   cura-bin tty-clock walker-bin elephant elephant-desktopapplications \
   elephant-calc elephant-runner elephant-files elephant-providerlist elephant-websearch elephant-clipboard \
-  elephant-symbols elephant-unicode elephant-emojis
+  elephant-symbols elephant-unicode elephant-emojis elephant-todo elephant-bluetooth
 
 # === Oh My Zsh Setup ===
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
