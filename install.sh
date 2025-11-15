@@ -13,7 +13,7 @@ Reset='\033[0m'
 
 . ./install-scripts/install-golang.sh
 
-. ./install-scripts/install-grub.sh
+#. ./install-scripts/install-grub.sh
 
 . ./install-scripts/install-icons.sh
 stow -R --dotfiles cursors
@@ -34,3 +34,5 @@ stow -R --dotfiles kitty
 stow -R --dotfiles yazi
 stow -R --dotfiles nvim
 stow -R --dotfiles vim
+
+. ./install-scripts/enable-daemon-services.sh

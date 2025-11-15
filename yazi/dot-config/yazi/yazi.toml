@@ -15,6 +15,11 @@ prepend_previewers = [
   # { mime = "{text/*,application/x-subrip}", run = "code" },
 
   # For mounted hard disk/drive.
-  { name = "/run/media/akerraps/**/*", run = "noop" },
+  #{ name = "/run/media/akerraps/**/*", run = "noop" },
   { name = "/run/media/uponce/**/*", run = "noop" },
 ]
+[opener]
+open = [
+    { run = 'xdg-open "$@"', block = false, desc = "Abrir con app por defecto", for = "linux" },
+]
+

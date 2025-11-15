@@ -26,3 +26,9 @@ desc = "Run lazygit"
 on = [ "n" ]
 run = "plugin relative-motions"
 desc = "Trigger a new relative motion"
+
+# Chmod
+[[mgr.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
