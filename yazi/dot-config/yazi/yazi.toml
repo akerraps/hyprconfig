@@ -3,10 +3,8 @@ prepend_preloaders = [
   # Do not preload files in mounted locations:
   # Environment variable won't work here.
   # Using absolute path instead.
-  { name = "/run/user/1000/gvfs/**/*", run = "noop" },
-
-  # For mounted hard disk/drive
   { name = "/run/media/akerraps/**/*", run = "noop" },
+  { name = "/run/media/uponce/**/*", run = "noop" },
 ]
 prepend_previewers = [
   # Allow to preview folder.
@@ -16,9 +14,7 @@ prepend_previewers = [
   # Uncomment the line below to allow previewing text files.
   # { mime = "{text/*,application/x-subrip}", run = "code" },
 
-  # Using absolute path.
-  { name = "/run/user/1000/gvfs/**/*", run = "noop" },
-
   # For mounted hard disk/drive.
   { name = "/run/media/akerraps/**/*", run = "noop" },
+  { name = "/run/media/uponce/**/*", run = "noop" },
 ]
