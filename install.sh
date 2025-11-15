@@ -16,21 +16,21 @@ Reset='\033[0m'
 . ./install-scripts/install-grub.sh
 
 . ./install-scripts/install-icons.sh
-stow --dotfiles cursors
+stow -R --dotfiles cursors
 
 . ./install-scripts/install-zsh.sh
-stow --dotfiles zsh
+stow -R --dotfiles zsh
 
 . ./install-scripts/install-ssdm.sh
-sudo stow sddm -t /etc/
+sudo stow -R sddm -t /etc/
 
 . ./install-scripts/install-walker.sh
-stow --dotfiles walker
+stow -R --dotfiles walker
 
 echo -e -e "\n$Green Installing final dotfiles"
-stow --dotfiles hypr
-stow --dotfiles hyprpanel
-stow --dotfiles kitty
-stow --dotfiles yazi
-stow --dotfiles nvim
-stow --dotfiles vim
+stow -R --dotfiles hypr
+stow -R --dotfiles hyprpanel
+stow -R --dotfiles kitty
+stow -R --dotfiles yazi
+stow -R --dotfiles nvim
+stow -R --dotfiles vim
