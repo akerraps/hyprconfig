@@ -4,76 +4,14 @@ on = [ "C" ]
 run = "plugin ouch"
 desc = "Compress with ouch"
 
-# Mount
-# Select device to mount and jump to its mount point
+# Mount plugin
 [[mgr.prepend_keymap]]
-on = [ "M", "m" ]
-run = "plugin gvfs -- select-then-mount --jump"
-desc = "Select device to mount and jump to its mount point"
-
-# Remount device under current working directory
-[[mgr.prepend_keymap]]
-on = [ "M", "R" ]
-run = "plugin gvfs -- remount-current-cwd-device"
-desc = "Remount device under cwd"
-
-# Select device then eject
-[[mgr.prepend_keymap]]
-on = [ "M", "u" ]
-run = "plugin gvfs -- select-then-unmount --eject"
-desc = "Select device then eject"
-
-# Select device then force to eject/unmount
-[[mgr.prepend_keymap]]
-on = [ "M", "U" ]
-run = "plugin gvfs -- select-then-unmount --eject --force"
-desc = "Select device then force to eject/unmount"
-
-# Add GVFS mount URI
-[[mgr.prepend_keymap]]
-on = [ "M", "a" ]
-run = "plugin gvfs -- add-mount"
-desc = "Add a GVFS mount URI"
-
-# Edit GVFS mount URI
-[[mgr.prepend_keymap]]
-on = [ "M", "e" ]
-run = "plugin gvfs -- edit-mount"
-desc = "Edit a GVFS mount URI"
-
-# Remove GVFS mount URI
-[[mgr.prepend_keymap]]
-on = [ "M", "r" ]
-run = "plugin gvfs -- remove-mount"
-desc = "Remove a GVFS mount URI"
-
-# Jump to device mount point
-[[mgr.prepend_keymap]]
-on = [ "g", "m" ]
-run = "plugin gvfs -- jump-to-device --automount"
-desc = "Automount then select device to jump to its mount point"
-
-# Jump back to previous cwd
-[[mgr.prepend_keymap]]
-on = [ "`", "`" ]
-run = "plugin gvfs -- jump-back-prev-cwd"
-desc = "Jump back to the position before jumped to device"
-
-# Enable automount when cd
-[[mgr.prepend_keymap]]
-on = [ "M", "t" ]
-run = "plugin gvfs -- automount-when-cd"
-desc = "Enable automount when cd to device under cwd"
-
-# Disable automount when cd
-[[mgr.prepend_keymap]]
-on = [ "M", "T" ]
-run = "plugin gvfs -- automount-when-cd --disabled"
-desc = "Disable automount when cd to device under cwd"
+on  = "M"
+run = "plugin mount"
 
 # SSHFS menu
 [[mgr.prepend_keymap]]
-on = [ "M", "s" ]
+on = [ "b" ]
 run = "plugin sshfs -- menu"
 desc = "Open SSHFS options"
 
