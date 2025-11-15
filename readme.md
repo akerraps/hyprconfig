@@ -39,7 +39,7 @@ This rice is designed for **Arch Linux** and Arch-based distributions.
 To install, simply run the following command:
 
 ```bash
-git clone https://github.com/akerraps/hyprconfig.git ~/.config/hyprconfig && bash ~/.config/hyprconfig/install.sh
+git clone https://github.com/akerraps/hyprconfig.git ~/hyprconfig && cd ~/hyprconfig && bash ./install.sh
 ```
 
 This script performs a complete setup:
