@@ -46,7 +46,6 @@ This script performs a complete setup:
 
 - Installs all required **core and AUR packages**.  
 - Creates **symlinks** for configuration files in appropriate directories.  
-- Installs **vim-plug** for both Vim.  
 - Sets up **Oh My Zsh** with `zsh-autosuggestions`.  
 - Runs optional **GRUB theme installation** if available.  
 

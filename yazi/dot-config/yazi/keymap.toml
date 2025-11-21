@@ -32,3 +32,9 @@ desc = "Trigger a new relative motion"
 on   = [ "c", "m" ]
 run  = "plugin chmod"
 desc = "Chmod on selected files"
+
+# Copy file contents
+[[mgr.prepend_keymap]]
+on = "<A-y>"
+run = ["plugin copy-file-contents"]
+desc = "Copy contents of file"
