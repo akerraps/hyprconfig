@@ -501,7 +501,8 @@
   "theme.font.label": "JetBrainsMono Nerd Font Ultra-Bold",
   "bar.workspaces.applicationIconEmptyWorkspace": "",
   "bar.workspaces.applicationIconMap": {
-    "class:UltiMaker-Cura": "󰹛"
+    "class:UltiMaker-Cura": "󰹛",
+    "class:yazi": ""
   },
   "menus.dashboard.powermenu.avatar.image": "~/.config/hyprconfig/resources/akerraps.jpg",
   "bar.launcher.middleClick": "walker",
