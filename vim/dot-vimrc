@@ -8,6 +8,8 @@ set encoding=utf-8        " Use UTF-8 encoding
 " set relativenumber        " Show relative line numbers (useful for navigation)
 set clipboard=unnamedplus " Use system clipboard for yank/paste
 set mouse=
+syntax on
+set termguicolors
 
 " ------------------------------
 " INDENTATION
@@ -35,7 +37,7 @@ set hlsearch              " Highlight all matches of the search
 set scrolloff=8           " Keep 8 lines of context when scrolling
 set wrap                  " Wrap long lines (soft wrap)
 set wildmenu              " Enhanced command-line completion
-set cursorline            " Highlight the current line
+"set cursorline            " Highlight the current line
 set showcmd               " Show incomplete commands
 set showmode              " Show current mode (normal/insert/visual/etc)
 
