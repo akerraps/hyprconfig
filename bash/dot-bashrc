@@ -76,10 +76,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Useful aliases (safe)
+# Useful aliases
 alias ll='ls -lahs --color=auto'
 alias la='ls -A --color=auto'
 alias l='ls -CF --color=auto'
+alias ..="cd .."
+alias ...="cd ../.."
+alias -="cd -"
+alias please='sudo $(fc -ln -1)'
 
 #####  bash-completion (portable) ###########################################
 
