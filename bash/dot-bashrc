@@ -135,6 +135,6 @@ fi
 
 unset color_prompt force_color_prompt
 
-. ~/z.sh
+. ~/.z.sh
 
 # End of ~/.bashrc
