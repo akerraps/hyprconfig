@@ -504,7 +504,7 @@
     "class:UltiMaker-Cura": "󰹛",
     "class:yazi": ""
   },
-  "menus.dashboard.powermenu.avatar.image": "~/.config/hyprconfig/resources/akerraps.jpg",
+  "menus.dashboard.powermenu.avatar.image": "~/hyprconfig/resources/akerraps.jpg",
   "bar.launcher.middleClick": "walker",
   "bar.launcher.rightClick": "walker",
   "bar.clock.rightClick": "walker",
