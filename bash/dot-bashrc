@@ -84,6 +84,47 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias please='sudo $(fc -ln -1)'
 
+alias please='sudo $(history -p !!)'
+
+dexec() { docker exec -it "$1" bash || docker exec -it "$1" sh; }
+dcexec() { docker-compose exec -it "$1" bash || docker-compose exec -it "$1" sh; }
+
+#
+dps() {
+  docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Image}}'
+}
+dcps() {
+  docker-compose ps --format 'table {{.Names}}\t{{.Status}}\t{{.Image}}'
+}
+
+
+dlogs() {
+  if [ -z "$1" ]; then
+    echo "Uso: dlogs <container> [tail_lines]" >&2
+    return 1
+  fi
+
+  if [ -n "$2" ]; then
+    docker logs --tail="$2" -f "$1"
+  else
+    docker logs -f "$1"
+  fi
+}
+
+
+dclogs() {
+  if [ -z "$1" ]; then
+    echo "Uso: dclogs <service> [tail_lines]" >&2
+    return 1
+  fi
+
+  if [ -n "$2" ]; then
+    docker-compose logs --tail="$2" -f "$1"
+  else
+    docker-compose logs -f "$1"
+  fi
+}
+
 #####  bash-completion (portable) ###########################################
 
 # Load bash completion if present (works on Amazon Linux and Ubuntu)
@@ -140,4 +181,8 @@ unset color_prompt force_color_prompt
 
 . ~/.z.sh
 
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source "$HOME/.bash-git-prompt/gitprompt.sh"
+fi
 # End of ~/.bashrc
