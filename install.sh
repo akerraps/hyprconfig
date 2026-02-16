@@ -34,5 +34,6 @@ stow -R --dotfiles kitty
 stow -R --dotfiles yazi
 stow -R --dotfiles nvim
 stow -R --dotfiles vim
+stow -R --dotfiles zed
 
 . ./install-scripts/enable-daemon-services.sh
