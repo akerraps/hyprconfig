@@ -7,6 +7,27 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "remove_trailing_whitespace_on_save": false,
+  "format_on_save": "on",
+  "ensure_final_newline_on_save": false,
+  "autosave": "off",
   "relative_line_numbers": "enabled",
   "vim_mode": true,
   "disable_ai": true,
@@ -17,7 +38,7 @@
   "icon_theme": {
     "mode": "dark",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)"
+    "dark": "Catppuccin Macchiato"
   },
   "base_keymap": "JetBrains",
   "ui_font_size": 16,
